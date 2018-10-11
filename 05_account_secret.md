@@ -78,7 +78,6 @@ console.log('地址：', instance.getAddress().toString('hex'));
 ![](https://truffleframework.com/img/tutorials/pet-shop/metamask-initial.png)
 [圖片來源 truffle](https://truffleframework.com/docs/truffle/getting-started/truffle-with-metamask)
 
-
 #### 助記碼 (Mnemonic Code) / 種子 (Seed)
 
 通常是 12 或 24 個隨機的字詞，只要透過原本建立帳戶的服務商(Metamask、硬體錢包設備...)，輸入密碼和助記碼，就可以回復出原本的私鑰。
@@ -94,4 +93,4 @@ console.log('地址：', instance.getAddress().toString('hex'));
 
 ### 小結
 
-你應該瞭解了跟帳戶相關的一些專有名詞、使用情境及整個機制的產生過程。帳戶在 Dapp 跟智能合約溝通的時候，經常會用到。
+你應該瞭解了跟帳戶相關的一些專有名詞、使用情境及整個機制的產生過程。帳戶在 Dapp 跟智能合約溝通的時候，經常會用到帳戶，所以我們勢必得先了解它。
