@@ -1,22 +1,22 @@
-# 網路 (Network)
-
 每次部署智能合約，都需要花發少許的 gas，gas 則是以 Ether 計價的。而且部署後就不能在更動邏輯，所以要經過非常嚴謹的測試，才能發佈。
 
 想當然我們不能直接拿主網路來測，因為那等同於把還沒準備好的程式碼，直接發布到正式環境了，所以除了主網路之外，還會提供多種測試網路。
 
 ### 網路的類型
 
-#### 主網路 / 主鏈 (mainnet)
+#### 主網路 / 主鏈 (mainnet)
 
 * 簡稱「主網」
 * 是正式環境 (production)，裡面的幣值具有實際經濟價值，是真實的數位貨幣。
 * networkid 編號為 1
-* 位於公開網路中
+* 查看狀態
+  * <https://etherscan.io/>
+  * <https://ethstats.net/>
 
 #### 測試網路 / 測試鏈
   
 * 簡稱「測試網」
-* 供預備發佈的智能合約測試使用，使用於 Staging 階段。
+* 發佈在主網前的最後測試，使用於 Staging 階段。
 * 位於公開網路中
 
 **Rposten**
@@ -47,15 +47,30 @@
   * <https://www.rinkeby.io/#stats>
 * 取得測試幣
   * <https://faucet.rinkeby.io/>
-  * <https://faucet.metamask.io/>
 
 ![](assets/06_rinkeby_status.png)
 
-> 補充說明：faucet service 又稱水龍頭，可以透過它來取得測試幣。
+> 補充說明：faucet service 又稱水龍頭，可以透過它來取得測試幣。
+
+**取得測試幣，以 Rinkeby 為例**
+
+Step 1：複製你的位址
+
+![](assets/06_metamask_copy_addr.png)
+
+Step 2：把位址發佈到 `Twitter`，然後複製連結。
+
+![](assets/06_twitter.png)
+
+Step 3：把連結貼到 `rinkeby` 的水管服務中，然後按 `Give me Ether` 按鈕，選擇需要多少幣。
+
+![](assets/06_rinkeby_faucet.png)
 
 #### 私有網路 / 私有鏈 (testnet)
 
+* 簡稱「私網」
 * 可以由你自己創造，規則你可以自己訂，與主鏈不相關，所以資料都是獨立的。
+* 可以只用本機環境
 
 **使用 geth**
 
@@ -114,5 +129,4 @@ ganache-cli
 資料來源：[stackexchange - How to select a network id or is there a list of network ids?](https://ethereum.stackexchange.com/questions/17051)
 
 ### 小結
-
-讀完這節後，你應該要知道各種網路的類型及使用情境，並且要知道怎麼取得測試幣，這樣你的戶頭才會有錢可以發佈智能合約。
+讀完這節後，你應該要知道各種網路類型及使用情境，並且要知道怎麼取得測試幣，這樣你的戶頭才會有錢可以發佈智能合約。
