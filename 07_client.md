@@ -29,7 +29,7 @@
 
 **常見支援的協定**
 
-* `JSON-RPC` 2.0
+* `JSON-RPC 2.0` 協定
 * `HTTP` 協定
 * `WebSocket` 協定
 * `IPC Socket` 協定
@@ -58,7 +58,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67
 * 使用 `GO` 語言 (Golang)
 * 由以太坊官方團隊所維護跟實作
 * 介面
-  * `Javascript Console`
+  * `Javascript Console`：在 Geth 主控台與以太坊互動
   * [JSON-RPC server](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 * 官網：<https://geth.ethereum.org/>
 * Github：<https://github.com/ethereum/go-ethereum>
