@@ -1,6 +1,6 @@
 # 用戶端 (Client)
 
-當我在閱讀網路上零散的文章來學習區塊鏈的時候，當看到 `Geth` 字眼都會充滿疑惑，有些文章說 `Geth` 是 `implement ethereum`，有些又說它可以當錢包，又說它是節點程式，甚至可以挖礦，到底是怎麼一回事？
+當我在閱讀網路上零散的文章來學習區塊鏈的時候，當看到 `Geth` 字眼都會充滿疑惑，有些文章說 `Geth` 是 `implement ethereum`，有些又說它可以當錢包，又說它是節點程式，甚至可以挖礦，到底是怎麼一回事？
 
 基本上不管是 `Geth` 或 `Parity` 都是用戶端，只是說有些專案提供除了讓程式呼叫的 `API` 之外，還有提供互動的 `commend cli` 或友善的圖形介面(例如 `Parity UI`)。希望透過這篇文章，大家可以更容易理解一點。
 
@@ -59,9 +59,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67
 * 由以太坊官方團隊所維護跟實作
 * 介面
   * `Javascript Console`
-  * [JSON-RPC server](https://github.com/ethereum/wiki/wiki/JSON-RPC)
+  * [JSON-RPC server](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 * 官網：<https://geth.ethereum.org/>
-* Github：<https://github.com/ethereum/go-ethereum>
+* Github：<https://github.com/ethereum/go-ethereum>
 * 文件：<https://github.com/ethereum/go-ethereum/wiki/geth>
 
 ### Parity
@@ -69,7 +69,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67
 ![](https://wiki.parity.io/images/logo-parity.jpg)
 
 * 使用 `Rust` 語言
-* 最快最輕量的用戶端，不用下載全部的區塊鏈資料，就可以快速地進行節點的同步。
+* 最快最輕量的用戶端，不用下載全部的區塊鏈資料，就可以快速地進行節點的同步。
 * 官網：<https://.arity.io/>
 * Github：<https://github.com/paritytech/parity>
 * 文件：<https://wiki.parity.io/>
