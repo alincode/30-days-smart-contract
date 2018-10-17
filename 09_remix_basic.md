@@ -38,7 +38,7 @@ remix-ide
 
 #### 2. Auto compile
 
-自動編譯：如果你把這個選項打勾，每當程式碼有修改或其他條件會需要重新編譯的情況時，就會觸發自動編譯功能。
+自動編譯：如果你把這個選項打勾，每當程式碼有修改或其他條件會需要重新編譯的情況時，就會觸發自動編譯功能。
 
 > 建議使用本機版 `Remix` 時才勾起這個選項
 
@@ -56,7 +56,7 @@ remix-ide
 
 #### 5. ABI (Application Binary Interface)
 
-`ABI` 裡記載了智能合約提供哪些函式，以及應該要傳入什麼樣的參數。當你要開發 `DApp` 時，需要兩個值，才能跟智能合約溝通，一個是合約位址，另一個就是一個是 `ABI` 了。如果需要更深入了解 `ABI` 內容裡每個值的意思，可以參考官方文件的 [`ABI Spec`](https://solidity.readthedocs.io/en/develop/abi-spec.html) 章節。
+`ABI` 裡記載了智能合約提供哪些函式，以及應該要傳入什麼樣的參數。當你要開發 `DApp` 時，需要兩個值，才能跟智能合約溝通，一個是合約位址，另一個就是一個是 `ABI` 了。如果需要更深入了解 `ABI` 內容裡每個值的意思，可以參考官方文件的 [`ABI Spec`](https://solidity.readthedocs.io/en/develop/abi-spec.html) 章節。
 
 #### 6. 選擇合約
 
