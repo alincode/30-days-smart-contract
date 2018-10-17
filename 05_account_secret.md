@@ -4,9 +4,9 @@
 
 ![](assets/05_flow.png)
 
-### 產生過程
+### 產生過程
 
-從 [ethereumjs](https://github.com/ethereumjs/ethereumjs-util/blob/master/index.js) 的原始碼可以了解到，私鑰就是一個 16 進位的 32 位數的亂數。
+從 [ethereumjs](https://github.com/ethereumjs/ethereumjs-util/blob/master/index.js) 的原始碼可以了解到，私鑰就是一個 16 進位的 32 位數的亂數。
 
 ```js
 const randomBytes = require('randombytes');
@@ -71,9 +71,9 @@ console.log('地址：', instance.getAddress().toString('hex'));
 
 #### 密碼 (Password)
 
-你可能會有點疑惑，我們已經有了私鑰，為什麼還要密碼，私鑰跟密碼的意義不是差不多嗎？我們剛剛有提到，私鑰是 32 個沒意義的字，非常難記憶，但如果太短的話，安全性又不好。
+你可能會有點疑惑，我們已經有了私鑰，為什麼還要密碼，私鑰跟密碼的意義不是差不多嗎？我們剛剛有提到，私鑰是 32 個沒意義的字，非常難記憶，但如果太短的話，安全性又不好。
 
-所以我們需要一組可自訂並容易記憶的密碼，通常限制為至少 8 碼以上，常使用於當你 MetaMask 閒置太久後，它會要求你輸入這組密碼，讓電子錢包重新回復到激活的狀態。
+所以我們需要一組可自訂並容易記憶的密碼，通常限制為至少 8 碼以上，常使用於當你 MetaMask 閒置太久後，它會要求你輸入這組密碼，讓電子錢包重新回復到激活的狀態。
 
 ![](https://truffleframework.com/img/tutorials/pet-shop/metamask-initial.png)
 [圖片來源 truffle](https://truffleframework.com/docs/truffle/getting-started/truffle-with-metamask)
@@ -84,12 +84,12 @@ console.log('地址：', instance.getAddress().toString('hex'));
 
 **為什麼回復私鑰要搞的這麼複雜？**
 
-因為私鑰在帳戶建立之後，就不能再更動，它又跟公鑰與地址習習相關，不像一般網站的帳號機制，弄個忘記密碼的功能，重新產生一組亂數密碼，寄到你信箱就沒事了。
+因為私鑰在帳戶建立之後，就不能再更動，它又跟公鑰與地址習習相關，不像一般網站的帳號機制，弄個忘記密碼的功能，重新產生一組亂數密碼，寄到你信箱就沒事了。
 
 ![](https://truffleframework.com/img/tutorials/pet-shop/metamask-seed.png)
 [圖片來源 truffle](https://truffleframework.com/docs/truffle/getting-started/truffle-with-metamask)
 
-安全建議：備份助記碼，但密碼記在腦中，或備份在離線裝置，使用類似硬體錢包、紙錢包的服務。
+安全建議：備份助記碼，但密碼記在腦中，或備份在離線裝置，使用類似硬體錢包、紙錢包的服務。
 
 ### 小結
 
