@@ -56,17 +56,19 @@ contract test_2 {
 
 **Assert 函式庫**
 
-| 函式名稱  | 支援的類別 |
-| ------------- | ------------- |
-| `Assert.ok()`  | `bool`  |
-| `Assert.equal()`  | `uint`, `int`, `bool`, `address`, `bytes32`, `string`  |
-| `Assert.notEqual()` | `uint`, `int`, `bool`, `address`, `bytes32`, `string`  |
-| `Assert.greaterThan()` | `uint`, `int` |
-| `Assert.lesserThan()` | `uint`, `int` |
+| 函式名稱               | 支援的類別                                            |
+| ---------------------- | ----------------------------------------------------- |
+| `Assert.ok()`          | `bool`                                                |
+| `Assert.equal()`       | `uint`, `int`, `bool`, `address`, `bytes32`, `string` |
+| `Assert.notEqual()`    | `uint`, `int`, `bool`, `address`, `bytes32`, `string` |
+| `Assert.greaterThan()` | `uint`, `int`                                         |
+| `Assert.lesserThan()`  | `uint`, `int`                                         |
 
 源自：<https://github.com/ethereum/remix/tree/master/remix-tests>
 
 **第一個測試範例**
+
+<https://openzeppelin.org/api/docs/math_SafeMath.html>
 
 ```js
 pragma solidity ^0.4.17;
