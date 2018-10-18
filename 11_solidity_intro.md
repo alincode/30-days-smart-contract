@@ -1,10 +1,10 @@
 # 介紹 Solidity 語言
 
-`Solidity` 是一種合約是導向程式語言，它受到 `C++`、`Python` 和 `Javascript` 語言影響，語法設計參考了 `ECMAScript`，所以對於有寫過 `Javascript` 的人，相對好上手，用來撰寫智能合約。`Solidity` 是靜態型語言，編譯後可以在 `EVM` 上執行。
+`Solidity` 是一種合約是導向程式語言，用來撰寫智能合約，它受到 `C++`、`Python` 和 `Javascript` 語言影響，語法設計參考了 `ECMAScript`，所以對於有寫過 `Javascript` 的人，相對好上手。`Solidity` 是靜態型語言，編譯後可以在 `EVM` 上執行。
 
 ![](assets/11_contributors.png)
 
-撰寫智能合約，除了可以用 `Solidity` 語言之外，還有 [Vyper](https://github.com/ethereum/vyper) 語言可以選擇。`Solidity` 語言處於持續開發階段，變動非常的頻繁。
+撰寫智能合約，除了可以用 `Solidity` 語言之外，還有 [Vyper](https://github.com/ethereum/vyper) 語言可以選擇。`Solidity` 語言處於持續開發階段，變動非常的頻繁，需要注意各個版本不同的語法差異。
 
 **EVM (Ethereum Virtual Machine)**
 
