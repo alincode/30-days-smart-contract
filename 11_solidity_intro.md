@@ -8,7 +8,34 @@
 
 **EVM (Ethereum Virtual Machine)**
 
-`EVM` 可翻譯為以太坊虛擬機，是智能合約的運行環境。
+`EVM` 中文翻譯為「以太坊虛擬機」，是智能合約的運行環境。
+
+**比較明顯的語法變動**
+
+* 0.4.21 版開始，呼叫 `event` 要加 `emit`
+* 0.4.22 版開始，建構子宣告方式改用 `constructor`
+
+舊版
+```js
+contract Example {
+  event Log(string message);
+
+  function Example() public {
+    Log("Hello");
+  }
+}
+```
+
+新版
+```js
+contract Example {
+  event Log(string message);
+
+  constructor() public {
+    emit Log("Hello");
+  }
+}
+```
 
 ### 一個最基本的智能合約
 
