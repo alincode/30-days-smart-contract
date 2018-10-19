@@ -6,17 +6,19 @@
 
 撰寫智能合約，除了可以用 `Solidity` 語言之外，還有 [Vyper](https://github.com/ethereum/vyper) 語言可以選擇。`Solidity` 語言處於持續開發階段，變動非常的頻繁，需要注意各個版本不同的語法差異。
 
-**EVM (Ethereum Virtual Machine)**
+### EVM (Ethereum Virtual Machine)
 
 `EVM` 中文翻譯為「以太坊虛擬機」，是智能合約的運行環境。
 
-**比較明顯的語法變動**
+### 比較明顯的語法變動
 
 * 0.4.21 版開始，呼叫 `event` 要加 `emit`
 * 0.4.22 版開始，建構子宣告方式改用 `constructor`
 
 舊版
 ```js
+pragma solidity ^0.4.20;
+
 contract Example {
   event Log(string message);
 
@@ -28,6 +30,8 @@ contract Example {
 
 新版
 ```js
+pragma solidity ^0.4.25;
+
 contract Example {
   event Log(string message);
 
@@ -55,6 +59,7 @@ contract SimpleStorage {
 }
 ```
 
-第一行一定要是 `pragma` 開頭，用來指示編輯器如何編譯原始碼，0.4.25 指的是 `solidity` 的版本。`contract` 是保留字，用法類似於其他程式語言的 `class`。
+* 第一行一定要是 `pragma` 開頭，用來指示編輯器如何編譯原始碼，0.4.25 指的是 `solidity` 的版本，接受最低用 `0.4.25` 版來編譯。
+* `contract` 是保留字，用法類似於其他程式語言的 `class`。
 
 Solidity 0.4.25 文件：<http://solidity.readthedocs.io/en/v0.4.25/>
