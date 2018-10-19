@@ -1,6 +1,6 @@
 # Solidity - 合約的結構
 
-`contract` 這個語法類似於物件導向程式語言的 `class`，而且 `contract` 也可以使用繼承的觀念。
+`contract` 這個語法類似於物件導向程式語言的 `class`，而且也可以使用繼承的觀念。
 
 ### 狀態變數 (State Variables)
 
@@ -85,7 +85,7 @@ contract Example {
 
 ### 列舉型別 (Enum)
 
-```
+```js
 pragma solidity ^0.4.25;
 
 contract Contest {
