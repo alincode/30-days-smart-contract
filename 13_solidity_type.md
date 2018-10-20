@@ -93,7 +93,7 @@ Solidity 無法直接進行字串比對，可以用 sha3 來比對。
 if (sha3(name1) == sha3(name2))
 ```
 
-#### Enum
+#### 列舉 (Enum)
 
 ```js
 enum State { Start, Pending, End }
@@ -124,7 +124,7 @@ function addFunder() public {
 }
 ```
 
-#### Structs
+#### 結構 (Struct)
 
 ```js
 mapping (address => Funder) funders;
@@ -150,7 +150,7 @@ function fund(string _name) public payable {
 * 字串
 * enum
 
-**函示 (Function Type)**
+**函示型別 (Function Type)**
 
 ```
 function (<parameter types>) {internal|external} [pure|constant|view|payable] [returns (<return types>)]
