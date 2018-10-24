@@ -13,7 +13,7 @@
 mapping(_KeyType => _ValueType)
 ```
 
-mapping 是一個動態大小的陣列，`_KeyType` 除了 `enum` 和 `struct` 型別能使用之外，其他的型別都支援。`_ValueType` 支援所有的型別，包含 `mapping` 型別。
+mapping 是一個動態大小的陣列，`_KeyType` 除了 `enum` 和 `struct` 型別不能使用之外，其他的型別都支援。`_ValueType` 支援所有的型別，包含 `mapping` 型別。
 
 範例
 ```

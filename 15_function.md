@@ -1,7 +1,5 @@
 # 修飾標記 view、pure、fallback 及重載函式
 
-<https://solidity.readthedocs.io/en/v0.4.20/contracts.html#view-functions>
-
 ### view
 
 當函示不修改任何狀態時，可以在函示宣告時標記 `view` 關鍵字。
