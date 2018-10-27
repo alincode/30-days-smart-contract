@@ -28,7 +28,10 @@ contract Example {
 
 ### 修飾函示 (Function Modifiers)
 
-常用於可重複使用的條件檢查
+使用情境：
+
+* 重複性的前置條件檢查
+* 切割多個 require
 
 ```js
 pragma solidity ^0.4.25;
