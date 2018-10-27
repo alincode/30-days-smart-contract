@@ -46,7 +46,7 @@ contract UserDirectory {
 ### 完整範例
 
 ```js
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.25;
 pragma experimental ABIEncoderV2;
 
 contract KingOfEther {
