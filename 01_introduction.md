@@ -1,6 +1,6 @@
-# 介紹
+# 序
 
-因為區塊鏈 (blockchain) 涵蓋範圍非常的廣，這次主題會著重於智能合約 (smart contract) 開發的部分。偏理論的部份，例如共識機制、加密貨幣的原理，坊間已有不少書可以閱讀，將不包含在這次分享的內容範圍。
+因為區塊鏈 (blockchain) 涵蓋範圍非常的廣，這次主題會著重於智能合約 (smart contract) 開發的部分。偏理論的部份，坊間已有不少書可以閱讀，將不包含在這次分享的內容範圍。
 
 **30 篇的文章會分成三大部分**
 
@@ -8,18 +8,47 @@
 1. 實際開發智能合約程式，並編寫部署到測試鏈上。
 1. 補充案例說明
 
+### 目錄
+
+* 區塊鏈和以太坊基礎
+  * [Day01: 序](https://ithelp.ithome.com.tw/articles/10200395)
+  * [Day02: 區塊](https://ithelp.ithome.com.tw/articles/10200528)
+  * [Day03: 交易](https://ithelp.ithome.com.tw/articles/10200654)
+  * [Day04: 帳戶的基本概念](https://ithelp.ithome.com.tw/articles/10200900)
+  * [Day05: 帳戶安全](https://ithelp.ithome.com.tw/articles/10200992)
+  * [Day06: 網路](https://ithelp.ithome.com.tw/articles/10201207)
+  * [Day07: 用戶端 Geth, Parity](https://ithelp.ithome.com.tw/articles/10201364)
+  * [Day08: 什麼是 Gas？](https://ithelp.ithome.com.tw/articles/10201462)
+* 開發工具準備
+  * [Day09: 線上版 IDE 之 Remix 基礎篇](https://ithelp.ithome.com.tw/articles/10201750)
+  * [Day10: 線上版 IDE 之 Remix 進階篇](https://ithelp.ithome.com.tw/articles/10202347)
+* 程式語言和實戰練習
+  * [Day11: 介紹 Solidity 語言](https://ithelp.ithome.com.tw/articles/10202884)
+  * [Day12: 合約的結構](https://ithelp.ithome.com.tw/articles/10203280)
+  * [Day13: Solidity 型別](https://ithelp.ithome.com.tw/articles/10203495)
+  * [Day14: 表達示與流程控制](https://ithelp.ithome.com.tw/articles/10203645)
+  * [Day15: 修飾標記 view、pure、fallback 及重載函式](https://ithelp.ithome.com.tw/articles/10204079)
+  * [Day16: mapping 型別](https://ithelp.ithome.com.tw/articles/10204297)
+  * [Day17: 可見度和自動生成 getter 函示](https://ithelp.ithome.com.tw/articles/10204818)
+  * [Day18: 單位和全域變數](https://ithelp.ithome.com.tw/articles/10205053)
+  * [Day19: 實戰練習「簡易版 King of the Ether」(1/2)](https://ithelp.ithome.com.tw/articles/10205298)
+  * [Day20: 實戰練習「簡易版 King of the Ether」(2/2)](https://ithelp.ithome.com.tw/articles/10205760)
+  * [Day21: 繼承、抽象合約](https://ithelp.ithome.com.tw/articles/10206052)
+  * [Day22: 介面](https://ithelp.ithome.com.tw/articles/10206191)
+  * [Day23: 實戰練習「Rinkeby Faucet」](https://ithelp.ithome.com.tw/articles/10206576)
+
 ### 一般傳統的合約？
 
 在進入到主題之前，我們先瞭解一下什麼是合約？下面這張圖片是我在網路上找到的合約範例。
 
-![](assets/01_contract_templete.jpg)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/01_contract_templete.jpg)
 
 讓我們來看看一般的傳統合約，需要具備哪些基本條件：
 
 1. 甲、乙方資訊
-1. 合約條款：大家須遵守的邏輯
-1. 合約效期
-1. 不可變動性：劃押後，雙方各執一份，不允許在變動。未來有其他需求，需重新定義一份新的合約。
+2. 合約條款：大家須遵守的邏輯
+3. 合約效期
+4. 不可變動性：劃押後，雙方各執一份，不允許在變動。未來有其他需求，需重新定義一份新的合約。
 
 除了基本條件之外，可能還有付款辦法、驗收條件等資訊。
 
