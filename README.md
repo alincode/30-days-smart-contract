@@ -1,6 +1,6 @@
 # 連續 30 天挑戰：Smart Contract 開發之使用 Solidity
 
-* [Day01: 什麼是智能合約)](https://ithelp.ithome.com.tw/articles/10200395)
+* [Day01: 什麼是智能合約](https://ithelp.ithome.com.tw/articles/10200395)
 * [Day02: 區塊](https://ithelp.ithome.com.tw/articles/10200528)
 * [Day03: 交易](https://ithelp.ithome.com.tw/articles/10200654)
 * [Day04: 帳戶的基本概念](https://ithelp.ithome.com.tw/articles/10200900)
