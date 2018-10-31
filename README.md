@@ -4,8 +4,8 @@
 
 * 區塊鏈和以太坊基礎
   * [Day01: 序](https://ithelp.ithome.com.tw/articles/10200395)
-  * [Day02: 區塊](https://ithelp.ithome.com.tw/articles/10200528)
-  * [Day03: 交易](https://ithelp.ithome.com.tw/articles/10200654)
+  * [Day02: 交易](https://ithelp.ithome.com.tw/articles/10200528)
+  * [Day03: 區塊](https://ithelp.ithome.com.tw/articles/10200654)
   * [Day04: 帳戶的基本概念](https://ithelp.ithome.com.tw/articles/10200900)
   * [Day05: 帳戶安全](https://ithelp.ithome.com.tw/articles/10200992)
   * [Day06: 網路](https://ithelp.ithome.com.tw/articles/10201207)
