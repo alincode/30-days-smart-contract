@@ -90,7 +90,7 @@ if (1) {
 }
 ```
 
-### 函示呼叫 (Function Calls)
+### 函式呼叫 (Function Calls)
 
 **呼叫內部函式 (Internal Function Calls)**
 
@@ -101,7 +101,7 @@ contract Math {
 }
 ```
 
-**呼叫外部函示 (External Function Calls)**
+**呼叫外部函式 (External Function Calls)**
 
 ```js
 pragma solidity ^0.4.0;
@@ -112,7 +112,7 @@ contract InfoFeed {
 contract Consumer {
   InfoFeed feed;
   function setFeed(address addr) { feed = InfoFeed(addr); }
-  // 在呼叫外部函示時，可以指定發送的貨幣數量跟 gas
+  // 在呼叫外部函式時，可以指定發送的貨幣數量跟 gas
   function callFeed() { feed.info.value(10).gas(800)(); }
 }
 ```

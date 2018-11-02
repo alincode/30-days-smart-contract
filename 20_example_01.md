@@ -29,14 +29,14 @@ contract UserDirectory {
         owner = msg.sender;
     }
     
-    // 支援在函示中，使用 User struct 參數。
+    // 支援在函式中，使用 User struct 參數。
     function addUser(User user) public {
         require(msg.sender == owner);
         _users[user.addr] = user;
         emit UserAdded(user.addr, user);
     }
     
-    // 支援在函示中使用 User struct 當回傳值
+    // 支援在函式中使用 User struct 當回傳值
     function user(address addr) public view returns (User user) {
         return _users[addr];
     }
@@ -81,11 +81,13 @@ contract KingOfEther {
     uint withdrawalAmount;
   }
 
+  // 前置條件檢查
   modifier onlyOwner() { require(msg.sender == owner); _; }
   modifier onlyTimeout() { require(now > endAt); _; }
   modifier overMinimumPrice() { require(msg.value != 0 && msg.value >= 0.1 ether); _; }
   modifier candidate(uint sendAmount) { require(available(sendAmount)); _; }
 
+  // 初始化狀態變數
   constructor(uint afterFewDay) {
     owner = msg.sender;
     state = State.Started;
@@ -93,6 +95,7 @@ contract KingOfEther {
     endAt = now + afterFewDay * 60 * 60 * 24;
   }
 
+  // 檢查目前狀態能不能篡位
   function available(uint sendAmount) private view returns (bool) {
     if(state == State.Ended) return false;
     if(now > endAt) return false;
@@ -113,6 +116,7 @@ contract KingOfEther {
     emit NoticeNewKing(msg.sender, msg.value, _name);
   }
 
+  // 取得國王資訊
   function kingInfo() public view returns (King) {
     return kings[currentKing];
   }

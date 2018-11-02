@@ -52,12 +52,12 @@ contract test_2 {
 
 ![](assets/10_testing_result.png)
 
-如果你要手動建立一個測試，你只要將智能合約的檔案命名為 `_test.sol` 結尾，例如 `ballot_test.sol`。第二行需要加 `import "remix_tests.sol";`，就可以呼叫與測試相關的函示。
+如果你要手動建立一個測試，你只要將智能合約的檔案命名為 `_test.sol` 結尾，例如 `ballot_test.sol`。第二行需要加 `import "remix_tests.sol";`，就可以呼叫與測試相關的函式。
 
 **Assert 函式庫**
 
-| 函式名稱               | 支援的類別                                            |
-| ---------------------- | ----------------------------------------------------- |
+| 函式名稱                   | 支援的類別                                                 |
+|------------------------|-------------------------------------------------------|
 | `Assert.ok()`          | `bool`                                                |
 | `Assert.equal()`       | `uint`, `int`, `bool`, `address`, `bytes32`, `string` |
 | `Assert.notEqual()`    | `uint`, `int`, `bool`, `address`, `bytes32`, `string` |

@@ -22,7 +22,7 @@ interface Token {
 
 > ERC 是 `Ethereum Request for Comments` 的縮寫，是以太坊開發者提案公開徵求意見，希望定義出統一的溝通介面，建立出一套可以遵循的標準。
 
-只要實作下面定義的這些函示，就可以建立符合 `ERC-20` 標準自己專屬的代幣。
+只要實作下面定義的這些函式，就可以建立符合 `ERC-20` 標準自己專屬的代幣。
 
 ```js
 // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md

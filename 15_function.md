@@ -2,7 +2,7 @@
 
 ### view
 
-當函示不修改任何狀態時，可以在函示宣告時標記 `view` 關鍵字。
+當函式不修改任何狀態時，可以在函式宣告時標記 `view` 關鍵字。
 
 以下的情境會修改狀態：
 
@@ -10,8 +10,8 @@
 * 觸發事件
 * 創建其他智能合約 (Creating other contracts.)
 * 呼叫 `selfdestruct`
-* 透過呼叫函示來發送 Ether
-* 呼叫其他不是 `view` 或 `pure` 的函示
+* 透過呼叫函式來發送 Ether
+* 呼叫其他不是 `view` 或 `pure` 的函式
 * 使用 low-level 的呼叫
 <!-- * Using inline assembly that contains certain opcodes. -->
 
@@ -29,14 +29,14 @@ contract C {
 
 ### pure
 
-當函示不讀取或不修改狀態時，可以在函示宣告時標記 `pure` 關鍵字。
+當函式不讀取或不修改狀態時，可以在函式宣告時標記 `pure` 關鍵字。
 
 除了上面列表的情況之外，還要考慮以下情況：
 
 * 讀取狀態變數
 * 存取 `this.balance` 或 `<address>.balance.`
 * 存取任何 `block`, `tx`, `msg` 物件裡的屬性 (除了 `msg.sig` 和 `msg.data` 是例外)
-* 呼叫任何沒有標記 `pure` 的函示
+* 呼叫任何沒有標記 `pure` 的函式
 <!-- * Using inline assembly that contains certain opcodes. -->
 
 ```js
@@ -51,25 +51,25 @@ contract C {
 
 ### fallback
 
-合約可以有唯一個沒有函式名稱的函示，此函示不沒有參數，也不能返回值。如果在呼叫合約時，呼叫的函示名稱沒有比對到任何具名函示，這個函示就會被觸發。
+合約可以有唯一個沒有函式名稱的函式，此函式不沒有參數，也不能返回值。如果在呼叫合約時，呼叫的函式名稱沒有比對到任何具名函式，這個函式就會被觸發。
 
-除此之外，如果有人對於`合約地址`進行一般的轉帳作業，也會執行此函示。但為了要接收 Ether，函示必須要標記 `payable`，否則會無法接收 Ether。
+除此之外，如果有人對於`合約地址`進行一般的轉帳作業，也會執行此函式。但為了要接收 Ether，函式必須要標記 `payable`，否則會無法接收 Ether。
 
 <!-- Note that the gas required by a transaction (as opposed to an internal call) that invokes the fallback function is much higher, because each transaction charges an additional amount of 21000 gas or more for things like signature checking. -->
 
-通常呼叫 `fallback` 函示，只會消耗掉少量的 gas (例如 2300 gas)，所以要盡量降低呼叫 `fallback` 函示的費用是非常重要的。
+通常呼叫 `fallback` 函式，只會消耗掉少量的 gas (例如 2300 gas)，所以要盡量降低呼叫 `fallback` 函式的費用是非常重要的。
 
 特別是以下操作，將消耗更多的 gas：
 
 * 寫入值
 * 建立一個合約 (Creating a contract)
-* 呼叫會消耗大量 gas 的外部函示
+* 呼叫會消耗大量 gas 的外部函式
 * 發送 Ether
 
-在部署你的合約之前，請測試你的 `fallback` 函示，確保它執行費用低於 `2300` gas。
+在部署你的合約之前，請測試你的 `fallback` 函式，確保它執行費用低於 `2300` gas。
 
-> 雖然 `fallback` 函示規定不能有參數，但是你還是可以透過 `msg.data` 來取得資料。
-> 如果你沒有宣告 `fallback` 函示，當有 `EOA` 帳戶轉錢給智能合約地址時，會直接直接拋出異常，並退回 Ether。
+> 雖然 `fallback` 函式規定不能有參數，但是你還是可以透過 `msg.data` 來取得資料。
+> 如果你沒有宣告 `fallback` 函式，當有 `EOA` 帳戶轉錢給智能合約地址時，會直接直接拋出異常，並退回 Ether。
 
 #### 情境一
 
@@ -83,7 +83,7 @@ contract Sink {
 
 #### 情境二
 
-因為 `Test` 合約的 `fallback` 函示沒有標記 `payable`，所以合約會直接拋出異常，並退回 Ether。
+因為 `Test` 合約的 `fallback` 函式沒有標記 `payable`，所以合約會直接拋出異常，並退回 Ether。
 
 ```js
 pragma solidity ^0.4.0;
@@ -123,7 +123,7 @@ contract Caller {
 
 ### 重載函式 (overloading)
 
-只要參數數量不同，合約可以有多個同名函示。
+只要參數數量不同，合約可以有多個同名函式。
 
 #### 情境一
 

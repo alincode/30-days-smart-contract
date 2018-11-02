@@ -14,9 +14,9 @@ contract Example {
 }
 ```
 
-### 函示 (Functions)
+### 函式 (Functions)
 
-函示可以被執行
+函式可以被執行
 
 ```js
 pragma solidity ^0.4.25;
@@ -26,7 +26,7 @@ contract Example {
 }
 ```
 
-### 修飾函示 (Function Modifiers)
+### 修飾函式 (Function Modifiers)
 
 使用情境：
 

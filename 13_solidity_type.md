@@ -150,7 +150,7 @@ function fund(string _name) public payable {
 * 字串
 * enum
 
-**函示型別 (Function Type)**
+**函式型別 (Function Type)**
 
 ```
 function (<parameter types>) {internal|external} [pure|constant|view|payable] [returns (<return types>)]
