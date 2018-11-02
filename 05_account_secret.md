@@ -1,6 +1,12 @@
 # 帳戶安全
 
-每個帳戶都有公鑰跟私鑰，而位址 (Address) 是由公鑰所決定的，發起交易時，需要使用私鑰簽名，然後礦工用公鑰檢查簽名，確認這筆交易的真假，在再把資料寫入區塊中，而區塊則會被傳遞至各個節點。
+### 相關名詞解釋
+
+* 私鑰 (Account Private Key)：32 個字，16 進位數字，用來發送交易和簽名。
+* 公鑰 (Account Public Key)：64 個字，用來驗證交易的真假。
+* 地址 (Account Address)：你可以將地址告訴別人，讓他照這個地址轉 Ether 給你。
+
+每個外部帳號都有公鑰跟私鑰，而位址 (Address) 是由公鑰所決定的，發起交易時，需要使用私鑰簽名，然後礦工用公鑰檢查簽名，確認這筆交易的真假，在再把資料寫入區塊中，而區塊則會被傳遞至各個節點。
 
 ![](assets/05_flow.png)
 
@@ -63,11 +69,6 @@ console.log('公鑰：', instance.getPublicKey().toString('hex'));
 console.log('地址：', instance.getAddress().toString('hex'));
 ```
 
-### 相關名詞解釋
-
-* 私鑰 (Account Private Key)：32 個字，16 進位數字，用來發送交易和簽名。
-* 公鑰 (Account Public Key)：64 個字，用來驗證交易的真假。
-* 地址 (Account Address)：你可以將地址告訴別人，讓他照這個地址轉 Ether 給你。
 
 #### 密碼 (Password)
 
@@ -93,4 +94,5 @@ console.log('地址：', instance.getAddress().toString('hex'));
 
 ### 小結
 
-你應該瞭解了跟帳戶相關的一些專有名詞、使用情境及整個機制的產生過程。帳戶在 Dapp 跟智能合約溝通的時候，經常會用到帳戶，所以我們勢必得先了解它。
+
+> MetaMask <>
