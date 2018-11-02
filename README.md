@@ -21,7 +21,7 @@
   * [Day14: 表達示與流程控制](https://ithelp.ithome.com.tw/articles/10203645)
   * [Day15: 修飾標記 view、pure、fallback 及重載函式](https://ithelp.ithome.com.tw/articles/10204079)
   * [Day16: mapping 型別](https://ithelp.ithome.com.tw/articles/10204297)
-  * [Day17: 可見度和自動生成 getter 函示](https://ithelp.ithome.com.tw/articles/10204818)
+  * [Day17: 可見度和自動生成 getter 函式](https://ithelp.ithome.com.tw/articles/10204818)
   * [Day18: 單位和全域變數](https://ithelp.ithome.com.tw/articles/10205053)
   * [Day19: 實戰練習「簡易版 King of the Ether」(1/2)](https://ithelp.ithome.com.tw/articles/10205298)
   * [Day20: 實戰練習「簡易版 King of the Ether」(2/2)](https://ithelp.ithome.com.tw/articles/10205760)
