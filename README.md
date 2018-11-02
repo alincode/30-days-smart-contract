@@ -92,3 +92,34 @@
 ### Suggestion
 1. `產生過程` 這個標題改成 "如何產生公鑰與私鑰" or "公私鑰的產生"。你小標跟句子的第一行, 主詞要留著。有時候大家是跳著看, 有時候要截圖或複製內容, 會區少主詞, 不知道這段再描述什麼
 
+##  06_network.md
+### Question
+1. 測試網路 / 測試鏈沒有networkid嗎?
+1. Pow共識機制是什麼? Kovan用得POA跟Rinkeby用的POA是一樣的嗎? 都是這個嗎? `Clique PoA protocol & Rinkeby PoA testnet`
+1. 可能沒相關的問題：測試網路是由誰來計算出hash還有儲存block, 既然沒有gas的話,就沒有minor要算吧?
+1. Rposten, kovan, Rinkeby我要如何選擇我要使用哪個testnet?
+1. `把位置發在twitter`?
+1. geth是? 然後發現在下一章有教 冏
+1. TestRPC是? 跟私鏈有什麼不同?  
+
+### Suggestion
+1. 開發鏈跟測試鏈沒有英文嗎?
+1. `可以由你自己創造`,`可以只用本機環境` 感覺起來是 也可以不用本機環境
+1. `取得測試幣，以 Rinkeby 為例` 這段感覺應該是全部類型介紹完在介紹
+
+##  07_client.md
+### Question
+1. `每種語言都有實作以太坊協定的相對應專案`, 每種語言是講每種用戶端嗎? 實作相對應專案是指?
+1. `Key匯入是?`
+1. 這裡的交易不是指發佈transation對吧?
+
+### Suggestion
+1. `還有提供互動的 commend cli` , 命令列介面（英語：command-line interface，縮寫：CLI）. 語意來說,可以寫提供互動的命令列介面(CLI)
+1. `curl -X POST --data`這段之前要有小標 或是描述說要示範得什麼
+1. 同理, go-ethereum上面要有個小標是以下介紹常見的ethereum client...
+1. 我覺得這個小結比較像放在一開始的目的。例如：倘若你想開發一個錢包功能的Dapp, 最簡單的方式就是直接使用現有的Wallet函式庫來開發。然而,若你想加入一些特殊的功能，例如XXXX，那麼wallet函式庫就無法滿足你，就要考慮直接跟Geth, Parity這些常見的ethereum client整合。   感覺這段可以放在 `希望透過這篇文章，`之前
+1. `unlockaccount `是誰提供的功能?
+
+
+
+
