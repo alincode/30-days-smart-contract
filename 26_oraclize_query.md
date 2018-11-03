@@ -1,4 +1,4 @@
-## oraclize_query 函式
+## Oraclize request
 
 基本上 Oraclize 的責任就是傳送資料給智能合約或提供資料的可靠證明 (可靠證明會留到下一篇說明)。Oraclize 與以太坊的智能合約整合是非同步的，任何一個 request 都包含兩個步驟。
 
