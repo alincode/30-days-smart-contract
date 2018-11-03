@@ -12,6 +12,8 @@
 
 `oraclize_query` 是 Oraclize 智能合約 API 所提供的一個函式。我們用一個簡單完整的範例來解釋 oraclize_query 執行流程。
 
+測試 Oraclize query 工具：<http://app.oraclize.it/home/test_query>
+
 #### 第一步：匯入 `oraclizeAPI`
 
 ```js

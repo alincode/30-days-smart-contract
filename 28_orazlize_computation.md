@@ -164,3 +164,7 @@ function request(string _encryptHeader, string _userId) public payable {
         = oraclize_query("computation", [ _query, _method, _url, _encryptHeader]);
 }
 ```
+
+### 延伸閱讀
+
+* [oraclize_query with encrypted API key no longer works · Issue #20 · oraclize/ethereum-api · GitHub](https://github.com/oraclize/ethereum-api/issues/20)
