@@ -1,8 +1,12 @@
 ## oraclize_query 函式
 
-![](assets/oraclize/query_flow.png)
+基本上 Oraclize 的責任就是傳送資料給智能合約或提供資料的可靠證明 (可靠證明會留到下一篇說明)。Oraclize 與以太坊的智能合約整合是非同步的，任何一個 request 都包含兩個步驟。
 
-`oraclize_query` 函式，是從 `oraclizeAPI` 合約繼承而來，功用是叫 Oraclize 服務幫我們取得外部的值，非同步的方式傳到我們實作的 `__callback` 函式之中。
+第一，使用者執行一個智能合約的函示，這個函示裡面又呼叫了 `oraclize_query` 函示 (`oraclize_query` 函式，是從 `oraclizeAPI` 合約繼承而來)，Oraclize 服務會持續監控 `oraclize_query` 所觸發的事件。
+
+第二，Oraclize 會持續監控 request，然後根據 request 的參數從外部環境取得或計算一個結果，然後建立一筆攜帶結果到開發者實作的智能合約 `__callback` 函示中。
+
+![](assets/oraclize/query_flow.png)
 
 ### 實作 oraclize_query 函式
 
@@ -14,6 +18,8 @@
 import "github.com/oraclize/ethereum-api/oraclizeAPI.sol";
 ```
 
+只有在 remix 可以直接使用 URL 的方式 import，如果你是用本機端自行編譯智能合約，請直接下載 `oraclizeAPI.sol` 至本機，然後指定合約的相對路徑位置。
+
 #### 第二步：繼承 `usingOraclize` 合約
 
 ```
@@ -22,6 +28,7 @@ contract ExampleContract is usingOraclize
 
 #### 第三步：呼叫 `oraclize_query` 函式
 
+在使用預設 `gas` 參數的情況下，合約的第一個呼叫 Oraclize 的 request，將不會被收費。如果連續發送多筆 request，將會被收費來支付 callback transaction 的費用。將會自動從 contract 的帳戶中扣錢，若 contract 中沒有足夠的金錢，request 將會 fail 並且 Oraclize 不會回傳任何資料。
 
 <https://www.therocktrading.com/api/ticker/ETHEUR> API 回傳值如下：
 

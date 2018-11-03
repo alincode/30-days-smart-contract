@@ -88,12 +88,20 @@ Parsing Helper 函式有四種 Parsing 類型：
 
 WolframAlpha 是一個使用 AI 技術的線上自動問答系統，你只要傳入問題，它就會回傳答案給你。問題的範圍非常廣泛，從最基本的天氣、微積分、統計學，甚至連地球科學的問題，它都可以回應你。
 
+```js
+oraclize_query("WolframAlpha", "random number between 0 and 100");
+```
+
 > WolframAlpha 官網：<https://www.wolframalpha.com/>
 > wiki：<https://zh.wikipedia.org/wiki/Wolfram_Alpha>
 
 ### 3. IPFS 資料來源
 
 IPFS (InterPlanetary File System) 是一個 P2P 的分散式檔案系統。因為區塊鏈儲存資料非常昂貴，所以你可以上傳檔案到 IPFS 後，將 IPFS 給你的 hash 值存入區塊鏈中。
+
+```js
+oraclize_query("IPFS", "QmdEJwJG1T9rzHvBD8i69HHuJaRgXRKEQCP7Bh1BVttZbU");
+```
 
 > miaoski 的 IPFS 筆記和教學 (繁體中文)：<https://github.com/miaoski/ipfs-tutorial>
 > wiki：<https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F>
@@ -105,4 +113,3 @@ IPFS (InterPlanetary File System) 是一個 P2P 的分散式檔案系統。因�
 ### 5. computation 資料來源
 
 `computation` 資料來源使用比較複雜，會用一個獨立的篇幅來說明。
-
