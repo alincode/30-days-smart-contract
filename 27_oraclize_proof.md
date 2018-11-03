@@ -1,8 +1,8 @@
 # Oraclize 可靠證明
 
-可靠證明 (Authenticity Proof)
+Oraclize 提供資料的可靠證明 (Authenticity Proof) 服務，確保資料的真偽。
 
-**可靠證明型態**
+**證明的型態**
 
 * `TLSNotary` 證明
 * `Android` 證明
