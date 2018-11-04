@@ -28,7 +28,7 @@
   * [Day21: 繼承、抽象合約](https://ithelp.ithome.com.tw/articles/10206052)
   * [Day22: 介面](https://ithelp.ithome.com.tw/articles/10206191)
   * [Day23: 實戰練習「Rinkeby Faucet」](https://ithelp.ithome.com.tw/articles/10206576)
-  * [Day24: 函式庫」](https://ithelp.ithome.com.tw/articles/10206994)
+  * [Day24: 函式庫](https://ithelp.ithome.com.tw/articles/10206994)
   * [Day25: 介紹 Oraclize 與資料來源](https://ithelp.ithome.com.tw/articles/10207290)
   * [Day26: Oraclize request](https://ithelp.ithome.com.tw/articles/10207495)
   * [Day27: Oraclize 可靠證明](https://ithelp.ithome.com.tw/articles/10207705)
