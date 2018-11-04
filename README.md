@@ -132,3 +132,15 @@
 1. `預估交易費 = Gas Limit * Gas Price`為什麼要用星號呢?
 1. `查詢gas狀態`可以有個描述這小結要說什麼，例如有提供什麼大家可能想知道的資訊 可以這邊查，例如基本費哪裡查(這個基本費是會變動的嗎?) 做什麼樣的功能，執行什麼樣的動作大概需花費多少
 1. 小結。其實我覺得看到這個人 可能不會感覺到 自己瀏覽網站or使用dapp要付錢。因為執行動作的人要付錢這件事跟自己上網的行為雷同這件事並沒有很明顯地讓人知道。
+
+##  09_remix_basic.md
+### Question
+1. 我的安裝reminx default contract是ballot
+### Suggestion
+
+##  11_solidity_intro.md
+### Question
+1. `view returns (uint)` view也是保留字嗎?
+### Suggestion
+1. Solidity 是一種合約是(X)式(O)導向程式語言
+1. 建構子帶參數範例錯誤，跟建構子帶參數長得一樣
