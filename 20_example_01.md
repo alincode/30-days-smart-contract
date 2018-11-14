@@ -43,6 +43,8 @@ contract UserDirectory {
 }
 ```
 
+> 在 Remix 設定 struct 時要用 `tuple` 格式。
+
 ### 完整範例
 
 ```js

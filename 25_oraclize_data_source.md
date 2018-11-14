@@ -113,3 +113,7 @@ oraclize_query("IPFS", "QmdEJwJG1T9rzHvBD8i69HHuJaRgXRKEQCP7Bh1BVttZbU");
 ### 5. computation 資料來源
 
 `computation` 資料來源使用比較複雜，會用一個獨立的篇幅來說明。
+
+### 延伸閱讀
+
+* <https://github.com/oraclize/ethereum-api/blob/master/oraclizeAPI_0.5.sol>
