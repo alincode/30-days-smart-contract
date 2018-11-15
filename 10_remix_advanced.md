@@ -1,74 +1,99 @@
 # 線上版 IDE 之 Remix 進階篇
 
-### 測試頁籤 (Testing)
+進階的部分涵蓋測試與除錯，兩大範疇。
+
+### 測試 (Testing)
+
+`Remix` 內建了陽春版測試功能，怎麼說陽春呢？花個五分鐘，從官方文件就可以一覽而盡它所有的功能。
+
+* 認定檔名為 `_test.sol` 結尾的為測試程式
+* 支援單獨執行一個測試程式與多個測試程式一起執行
+* hook：例如 `beforeAll`、`beforeEach`
+* 斷言 (Assert) 函式庫
+
+**斷言函式庫**
+
+| 函式名稱                 | 支援的類別                                     |
+|----------------------|-------------------------------------------|
+| Assert.ok()          | bool                                      |
+| Assert.equal()       | uint, int, bool, address, bytes32, string |
+| Assert.notEqual()    | uint, int, bool, address, bytes32, string |
+| Assert.greaterThan() | uint, int                                 |
+| Assert.lesserThan()  | uint, int                                 |
+
+> remix-test 模組：<https://github.com/ethereum/remix/tree/master/remix-tests>
+
+#### Testing 頁籤
+
+Testing 頁籤有兩個明顯的按鈕
+
+* `Generate test file` 按鈕：產生一個測試範例
+* `Run Test` 按鈕：執行測試
+
+核選方塊 (checkbox) 則是讓你可以勾選，只執行哪些測試程式。
 
 ![](assets/10_testing.png)
 
-按一下 `Generate test file`，它就會產生一個測試範例給你。
+#### 測試檔案範例
+
+這個原始碼內容，就是你按下 `Generate test file` 按鈕後，Remix 產生的測試範例。
 
 ```js
 pragma solidity ^0.4.0;
-import "remix_tests.sol"; // this import is automatically injected by Remix.
 
-// file name has to end with '_test.sol'
+// Remix 會自動注入這個合約，這個合約讓你可以在 Remix 環境識別 hook 跟 Assert 等特別的語法。
+
+import "remix_tests.sol";
+
+// 檔名需要以 _test.sol 結尾
 contract test_1 {
     
-    function beforeAll () {
-      // here should instanciate tested contract
-    }
+    function beforeAll () {}
     
     function check1 () public {
-      // this function is not constant, use 'Assert' to test the contract
+      // 函式沒有 constant 修飾符時，使用斷言函式庫來判斷測試結果。
       Assert.equal(uint(2), uint(1), "error message");
       Assert.equal(uint(2), uint(2), "error message");
     }
     
     function check2 () public constant returns (bool) {
-      // this function is constant, use the return value (true or false) to test the contract
+      // 函式有加 constant 修飾符時，使用回傳值 boolean 來判斷測試的結果。
       return true;
     }
 }
 
 contract test_2 {
    
-    function beforeAll () {
-      // here should instanciate tested contract
-    }
+    function beforeAll () {}
     
     function check1 () public {
-      // this function is not constant, use 'Assert' to test the contract
       Assert.equal(uint(2), uint(1), "error message");
       Assert.equal(uint(2), uint(2), "error message");
     }
     
     function check2 () public constant returns (bool) {
-      // this function is constant, use the return value (true or false) to test the contract
       return true;
     }
 }
 ```
 
-按下 `Run Test` 按鈕後，就可以看到測試結果。
+#### 測試結果
+
+當你按下 `Run Test` 按鈕後，就可以看到按鈕下方多了一個區塊，這個區塊就是用來呈現測試結果。
 
 ![](assets/10_testing_result.png)
 
-如果你要手動建立一個測試，你只要將智能合約的檔案命名為 `_test.sol` 結尾，例如 `ballot_test.sol`。第二行需要加 `import "remix_tests.sol";`，就可以呼叫與測試相關的函式。
+#### 在 Remix 上撰寫測試程式
 
-**Assert 函式庫**
+現在大致上知道怎麼使用了，那我們就來手動建立一個 SafeMath 合約的測試程式吧。
 
-| 函式名稱                   | 支援的類別                                                 |
-|------------------------|-------------------------------------------------------|
-| `Assert.ok()`          | `bool`                                                |
-| `Assert.equal()`       | `uint`, `int`, `bool`, `address`, `bytes32`, `string` |
-| `Assert.notEqual()`    | `uint`, `int`, `bool`, `address`, `bytes32`, `string` |
-| `Assert.greaterThan()` | `uint`, `int`                                         |
-| `Assert.lesserThan()`  | `uint`, `int`                                         |
+> SafeMath 合約：<https://openzeppelin.org/api/docs/math_SafeMath.html>
 
-源自：<https://github.com/ethereum/remix/tree/master/remix-tests>
+1. 首先，你要新增一個合約並把檔案命名為 `_test.sol` 結尾，例如 `ballot_test.sol`。
+1. 指定合約最低接受編譯的版本
+1. 接著透過 `import "remix_tests.sol";` 語法來匯入 `remix_tests.sol` 合約。
+1. 開始實作測試邏輯
 
-**第一個測試範例**
-
-<https://openzeppelin.org/api/docs/math_SafeMath.html>
 
 ```js
 pragma solidity ^0.4.17;
@@ -97,24 +122,32 @@ contract SafeMathTest {
 }
 ```
 
+**在 Remix 上真實執行的畫面**
+
 ![](assets/10_first_test.png)
 
-### Debugger 頁籤
+### 除錯 (Debugger)
+
+除錯是一位開發者非常重要的課題，好的除錯技能可以讓你省非常多時間，這讓我們來看看它提供了哪些功能。
+
+從下面這張圖很明顯地看到兩個輸入框跟兩個按鈕，第一個輸入框可以填入區塊編號 (Block number)，第二個輸入框可以填入交易 hash，至於按鈕就不多做解釋了，就如字面上的一樣。
 
 ![](assets/10_debugger_tab.png)
 
-可以讓你輸入 `transaction hash`，然後按下 `Start debugging` 按鈕，就可以看到 `Transaction` 的逐步執行結果。那要怎麼找到 `transaction hash` 呢？
+這時候你可能會想到，debug 會需要交易 hash 值 (transaction hash)，那我到底要怎麼知道這個值呢？請先把你的視線轉到 Remix 下方的主控台 (terminal) 區塊，每當你發佈合約或呼叫函式時，這裡都會出現一些新的 log。
 
 ![](assets/10_terminal_log.png)
 
-當你在執行函式時，下方的控制台 (terminal) 會出現一些 log 訊息，把 log 展開，可以看到更詳細的內容，這裡面就有 `transaction hash`。
+試著把 log 展開可以看到更詳細的內容，看到了嗎？`transaction hash` 就在這裡。
+
+另一個更簡便的方法，按一下 `Debug` 按鈕，它可以自動帶入 `transaction hash` 並立即執行 debugging 模式。
 
 ![](assets/10_terminal_log_detail.png)
 
-或者你也可以在上面那張圖中的 `Debug` 按鈕按一下，它會直接開始執行 `Start debugging`。結果如下圖所示：
+#### debugger 模式
 
 ![](assets/10_debuggering.png)
 
-### 小結
+#### 資料來源
 
-工欲善其事，必先利其器。測試跟 debug 往往是最花時間的，千萬要記得花時間摸熟它。
+* Remix 官方文件：<https://remix.readthedocs.io/en/latest/index.html>
