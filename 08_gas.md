@@ -24,56 +24,13 @@ Gas Limit 代表的是你最多允許消耗多少 `Gas` 為上限，這樣的設
 
 以下面的圖為例，`0.08 Ether` 的交易手續費會被礦工收走，這個概念像是沒有功勞也有苦勞一樣，雖然只做了一半，但是因為你設定的 `Gas Limit` 太低，所以礦工沒把交易完成，但你實際還是用到了礦工的資源，所以還是需要付費。
 
-![](assets/02/transaction_fail.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/02/transaction_fail.png)
 
 **Gas Limit 設定過高**
 
 若 Gas limit 估算太高，但實際上不需要消耗掉那麼多的 Gas，剩餘的部分會退回，不會有損失。
 
-#### 交易手續費計算公式
-
-```
-預估交易費 = Gas Limit * Gas Price
-實際交易費 = Gas Used * Gas Price
-```
-
-以下面的圖為例
-
-* Gas Price 是 20 Gwei (= 0.00000002 Ether)
-* Gas Limit 是 39000
-* Gas Used 是 21000
-
-![](assets/02/transaction1.png)
-
-所以計算結果為
-
-```
-預估交易費 = 39000 * 0.00000002 Ether = 0.00078 Ether
-實際交易費 = 21000 * 0.00000002 Ether = 0.00042 Ether
-大約等於 0.09 USD 或 2.7 TWD
-```
-
-### 查詢 Gas 資訊
-
-我們經常會使用到 Gas，但 Gas 就跟我們日常會用到的汽油一樣，單價會因為市場而浮動的，那我們要怎麼知道單價該設多少才適合？下面這兩個網站可以找到當下 Gas 單價的建議值。
-
-Ethereum GAS Tracker
-* 網址：<https://etherscan.io/gastracker>
-* Safe Gas Price
-
-![Ethereum GAS Tracker](assets/08_gas_tracker.png)
-
-ETH Gas Station
-* 網址：<https://ethgasstation.info>
-* Gas Price Std (Gwei)
-
-![ETH Gas Station](assets/08_ethgasstation.png)
-
-ETH Gas Station 裡面有一個[計算機](https://ethgasstation.info/calculatorTxV.php)，可以快速幫妳算出建議的交易手續費參考值。
-
-![](assets/08_calculatorTxV.png)
-
-### Gas 單位表
+#### Gas 單位表
 
 這裡只列出幾種單位，如果想查詢全部的單位可以看[以太坊黃皮書](https://ethereum.github.io/yellowpaper/paper.pdf)，實際上僅 wei、Gwei、ether 比較常見。
 
@@ -91,11 +48,58 @@ ETH Gas Station 裡面有一個[計算機](https://ethgasstation.info/calculator
 
 * 每一個交易的基本費是 21000 Gas
 
-![](assets/08_fee_schedule.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_fee_schedule.png)
+
+#### 交易手續費計算公式
+
+```
+預估交易費 = Gas Limit x Gas Price
+實際交易費 = Gas Used x Gas Price
+```
+
+以下面的圖為例
+
+* Gas Price 是 20 Gwei (= 0.00000002 Ether)
+* Gas Limit 是 39000
+* Gas Used 是 21000
+
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/02/transaction1.png)
+
+所以計算結果為
+
+```
+預估交易費 = 39000 x 0.00000002 Ether = 0.00078 Ether
+實際交易費 = 21000 x 0.00000002 Ether = 0.00042 Ether
+大約等於 0.09 USD 或 2.7 TWD
+```
+
+#### 查詢 Gas 資訊
+
+我們經常會使用到 Gas，但 Gas 就跟我們日常會用到的汽油一樣，單價會因為市場而浮動，那我們要怎麼知道單價該設多少才適合？下面這兩個網站可以找到當下 Gas 單價的建議值。
+
+Ethereum GAS Tracker
+* 網址：<https://etherscan.io/gastracker>
+* Safe Gas Price
+
+![Ethereum GAS Tracker](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_gas_tracker.png)
+
+ETH Gas Station
+* 網址：<https://ethgasstation.info>
+* Gas Price Std (Gwei)
+
+![ETH Gas Station](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_ethgasstation.png)
+
+ETH Gas Station 裡面有一個[計算機](https://ethgasstation.info/calculatorTxV.php)，可以快速幫妳算出建議的交易手續費參考值。
+
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_calculatorTxV.png)
 
 #### 小結
 
-如果你之前沒接觸過區塊鏈，`Gas` 對你可能會是一個很新奇的觀念，因為我們已經習慣了，網路上的資源是由提供服務者買單，例如提供網路服務者會月費主機，或是像 AWS EC2 可以選擇依照使用量付費，但不管如何都不是向使用者收費。但智能合約則不太一樣，它是向實際使用資源的人收費的。
+如果你之前沒接觸過區塊鏈，`Gas` 對你可能會是一個很新奇的觀念，因為我們已經習慣網路上的資源是由提供網站的人買單。
+
+例如今天我們在一個網站註冊成為會員，網站會把我們填寫的資訊寫入至資料庫中，在這個過程中，我們雖然使用了資料庫的資源，但並沒有付費，因為提供網站的人已經預付了這樣的費用。
+
+但我們在執行智能合約時邏輯則不太一樣，若需要把資料寫入至區塊鏈中，合約會向實際使用資源的人收費的。
 
 ### 資料來源
 
