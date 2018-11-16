@@ -140,13 +140,26 @@ contract SafeMathTest {
 
 試著把 log 展開可以看到更詳細的內容，看到了嗎？`transaction hash` 就在這裡。
 
-另一個更簡便的方法，按一下 `Debug` 按鈕，它可以自動帶入 `transaction hash` 並立即執行 debugging 模式。
+另一個更簡便的方法，按一下 `Debug` 按鈕，它可以自動帶入 transaction hash 並立即執行 debugging 模式。
 
 ![](assets/10_terminal_log_detail.png)
 
 #### debugger 模式
 
 ![](assets/10_debuggering.png)
+
+### 安裝本機版 Remix
+
+線上版的 `Remix` 畢竟是多人共用，如果你覺得太慢，可以裝本機端的 `Remix`，步驟非常的簡單。
+
+```sh
+npm install remix-ide -g
+remix-ide
+```
+
+![](assets/10_remix_start.png)
+
+然後開啟 `http://localhost:8080/`
 
 #### 資料來源
 
