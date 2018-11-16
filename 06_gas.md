@@ -20,7 +20,7 @@ Gas Limit 代表的是你最多允許消耗多少 `Gas` 為上限，這樣的設
 
 **Gas Limit 設定太低**
 
-若函式前兩行是修改變數值，執行到第三行時，你的 `Gas` 沒了，在這種情況下交易失敗，交易之前所有修改的狀態會被回復到前一個狀態，並且交易費會被沒收。
+當 Gas Limit 設定太低，若函式前兩行是修改變數值，執行到第三行時，你的 `Gas` 沒了，在這種情況下交易失敗，交易之前所有修改的狀態會被回復到前一個狀態，並且交易費會被沒收。
 
 以下面的圖為例，`0.08 Ether` 的交易手續費會被礦工收走，這個概念像是沒有功勞也有苦勞一樣，雖然只做了一半，但是因為你設定的 `Gas Limit` 太低，所以礦工沒把交易完成，但你實際還是用到了礦工的資源，所以還是需要付費。
 
@@ -48,7 +48,7 @@ Gas Limit 代表的是你最多允許消耗多少 `Gas` 為上限，這樣的設
 
 * 每一個交易的基本費是 21000 Gas
 
-![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_fee_schedule.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/06/fee_schedule.png)
 
 #### 交易手續費計算公式
 
@@ -81,17 +81,17 @@ Ethereum GAS Tracker
 * 網址：<https://etherscan.io/gastracker>
 * Safe Gas Price
 
-![Ethereum GAS Tracker](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_gas_tracker.png)
+![Ethereum GAS Tracker](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/06/gas_tracker.png)
 
 ETH Gas Station
 * 網址：<https://ethgasstation.info>
 * Gas Price Std (Gwei)
 
-![ETH Gas Station](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_ethgasstation.png)
+![ETH Gas Station](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/06/ethgasstation.png)
 
 ETH Gas Station 裡面有一個[計算機](https://ethgasstation.info/calculatorTxV.php)，可以快速幫妳算出建議的交易手續費參考值。
 
-![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/08_calculatorTxV.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/06/calculatorTxV.png)
 
 #### 小結
 
