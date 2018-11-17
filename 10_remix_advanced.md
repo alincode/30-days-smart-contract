@@ -4,7 +4,7 @@
 
 ### 測試 (Testing)
 
-`Remix` 內建了陽春版測試功能，怎麼說陽春呢？花個五分鐘，從官方文件就可以一覽而盡它所有的功能。
+`Remix` 內建了陽春版測試功能，怎麼說陽春呢？花個五分鐘從 remix-test 模組文件：<https://github.com/ethereum/remix/tree/master/remix-tests>，就可以一覽而盡所有的功能。
 
 * 認定檔名為 `_test.sol` 結尾的為測試程式
 * 支援單獨執行一個測試程式與多個測試程式一起執行
@@ -21,14 +21,12 @@
 | Assert.greaterThan() | uint, int                                 |
 | Assert.lesserThan()  | uint, int                                 |
 
-> remix-test 模組：<https://github.com/ethereum/remix/tree/master/remix-tests>
-
 #### Testing 頁籤
 
 Testing 頁籤有兩個明顯的按鈕
 
-* `Generate test file` 按鈕：產生一個測試範例
-* `Run Test` 按鈕：執行測試
+* `Generate test file` 按鈕：產生一個測試程式範例
+* `Run Test` 按鈕：執行測試程式
 
 核選方塊 (checkbox) 則是讓你可以勾選，只執行哪些測試程式。
 
@@ -36,7 +34,7 @@ Testing 頁籤有兩個明顯的按鈕
 
 #### 測試檔案範例
 
-這個原始碼內容，就是你按下 `Generate test file` 按鈕後，Remix 產生的測試範例。
+這個原始碼內容，就是你按下 `Generate test file` 按鈕後，Remix 產生的測試範例程式。
 
 ```js
 pragma solidity ^0.4.0;
@@ -85,15 +83,12 @@ contract test_2 {
 
 #### 在 Remix 上撰寫測試程式
 
-現在大致上知道怎麼使用了，那我們就來手動建立一個 SafeMath 合約的測試程式吧。
-
-> SafeMath 合約：<https://openzeppelin.org/api/docs/math_SafeMath.html>
+現在大致上知道怎麼使用了，那我們就來手動建立一個 SafeMath 合約：<https://openzeppelin.org/api/docs/math_SafeMath.html> 的測試程式吧。
 
 1. 首先，你要新增一個合約並把檔案命名為 `_test.sol` 結尾，例如 `ballot_test.sol`。
-1. 指定合約最低接受編譯的版本
-1. 接著透過 `import "remix_tests.sol";` 語法來匯入 `remix_tests.sol` 合約。
-1. 開始實作測試邏輯
-
+2. 指定合約最低接受編譯的版本
+3. 接著透過 `import "remix_tests.sol";` 語法來匯入 `remix_tests.sol` 合約。
+4. 開始實作測試邏輯
 
 ```js
 pragma solidity ^0.4.17;
