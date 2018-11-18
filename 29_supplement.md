@@ -1,8 +1,27 @@
 # 補充篇
 
+### Ganache
+
+提供快速的開發測試環境，啟動時自動創建十組帳號，資料僅暫時在記憶體中，程式關掉後資料就會消失。
+
+圖形化介面
+
+<https://truffleframework.com/ganache>
+
+![](https://truffleframework.com/img/ganache-window.png)
+
+命令提示介面
+
+```
+// 安裝
+npm install -g ganache-cli
+// 執行
+ganache-cli
+```
+
 ### 工具函式庫
 
-目前 Solidity 生態系中，還沒有套件管理工具，只能到處搜刮別人的作品，這邊列出幾個大家常用的工具函式庫。
+目前 Solidity 生態系中，還沒有官方的套件管理工具，只能到處搜刮別人的作品，這邊列出幾個大家常用的工具函式庫。
 
 #### Basic string utilities for Solidity
 
