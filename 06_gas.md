@@ -79,13 +79,13 @@ Gas Limit 代表的是你最多允許消耗多少 `Gas` 為上限，這樣的設
 
 Ethereum GAS Tracker
 * 網址：<https://etherscan.io/gastracker>
-* Safe Gas Price
+* 可以參考 Safe Gas Price 的值
 
 ![Ethereum GAS Tracker](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/06/gas_tracker.png)
 
 ETH Gas Station
 * 網址：<https://ethgasstation.info>
-* Gas Price Std (Gwei)
+* 可以參考 Gas Price Std (Gwei) 的值
 
 ![ETH Gas Station](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/06/ethgasstation.png)
 
