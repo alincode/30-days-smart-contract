@@ -7,10 +7,10 @@
   * [Day02: 交易](https://ithelp.ithome.com.tw/articles/10200528)
   * [Day03: 區塊](https://ithelp.ithome.com.tw/articles/10200654)
   * [Day04: 帳戶的基本概念](https://ithelp.ithome.com.tw/articles/10200900)
-  * [Day05: 帳戶安全](https://ithelp.ithome.com.tw/articles/10200992)
-  * [Day06: 網路](https://ithelp.ithome.com.tw/articles/10201207)
-  * [Day07: 用戶端 Geth, Parity](https://ithelp.ithome.com.tw/articles/10201364)
-  * [Day08: 什麼是 Gas？](https://ithelp.ithome.com.tw/articles/10201462)
+  * [Day05: MetaMask 加密貨幣錢包](https://ithelp.ithome.com.tw/articles/10200992)
+  * [Day06: 什麼是 Gas？](https://ithelp.ithome.com.tw/articles/10201207)
+  * [Day07: 網路](https://ithelp.ithome.com.tw/articles/10201364)
+  * [Day08: 用戶端 Geth, Parity](https://ithelp.ithome.com.tw/articles/10201462)
 * 開發工具準備
   * [Day09: 線上版 IDE 之 Remix 基礎篇](https://ithelp.ithome.com.tw/articles/10201750)
   * [Day10: 線上版 IDE 之 Remix 進階篇](https://ithelp.ithome.com.tw/articles/10202347)
@@ -33,16 +33,10 @@
   * [Day26: Oraclize request](https://ithelp.ithome.com.tw/articles/10207495)
   * [Day27: Oraclize 可靠證明](https://ithelp.ithome.com.tw/articles/10207705)
   * [Day28: Oraclize 的 computation 資料來源](https://ithelp.ithome.com.tw/articles/10207843)
-
+  * [Day29: 補充篇](https://ithelp.ithome.com.tw/articles/10208254)
+  * [Day30: 總結](https://ithelp.ithome.com.tw/articles/10208317)
 
 # Discussion
-## 01_introduction.md
-### Suggestion
-1. 第一次提到的關鍵字，可以把英文原文寫出來。Ex.  智能合約、共識機制、加密貨幣、去中心化、匿名性 等。主要是怕大家翻譯造成的認知誤差
-1. 同理，第一次提到的英文，可以把中文寫出來，如果有的話。Ex. Gas Fee, 礦工費。
-1. 大標題講完之後, 第一段通常會把關鍵字重複。例如 
- </br><b>什麼是Smart Contract?></b></br>
- Smart Contract中文大多翻為「智能合約」。....
 
 ## 02_block.md
 ### Question
@@ -67,21 +61,6 @@
 1. `1. 一般轉帳的 Transaction` 以下是用乙太幣轉帳的範例,可以註明一下這是一個以太幣範例
 1. `讀完此篇後，你將具有基本的 Transaction 概念`, 這種寫法是放在文章開頭,還沒讀之前。小結是表示讀完了,一般會用, "相信你現在已經具有基本的Transaction概念,..." 
 1. 因為下一章是介紹"帳戶", 在小結可以提一下, 為什麼接下來要介紹"帳戶". Ex 最常普遍/熱門的區塊練技術應用?
-
-## 04_account.md
-### Question
-1. `因為在 Ethereum 的世界有智能合約，所以帳戶又分兩種型態` 不太懂智能合約跟帳戶分兩格型態的關聯
-1. 不太懂EOA和CA的是什麼,用途與用法差異
-1. 不太懂小結的結論, 為什麼算是實作了個人帳號跟整合了第三方支付。
-1. `但 Ethereum 還提供了程式語言`哪一種程式語言? 多種嗎?
-
-### Suggestion
-1. 你在不同的章節有的時候習慣講blockchain有時候習慣講區塊鍊,我覺得一系列統一個用詞比較好。
-1. `公開帳本技術`有英文原文嗎?有的話可以附上
-1. 語氣結束後要用句號`帳本是大家最容易理解的原理，因為大家都有銀行戶頭，也常常使用它，當我們要轉帳給某人的時候，我們需要填寫哪些資訊？`
-改成 `帳本是大家最容易理解的原理，因為大家都有銀行戶頭，也常常使用它`<b>。那</b>`當我們要轉帳給某人的時候，我們需要填寫哪些資訊？`
-1. EOA和CA 圖片來源沒寫到, 特性太簡略。`不管是 EOA 或合約帳戶` 這句改成不管是外部帳戶或是合約帳戶，統一用中文或是英文縮寫比較好。
-1. ICO 在這個系列第一次提到, 最好把原文寫出來。
 
 ##  05_account_secret.md
 ### Question
@@ -112,40 +91,4 @@
 1. `可以由你自己創造`,`可以只用本機環境` 感覺起來是 也可以不用本機環境
 1. `取得測試幣，以 Rinkeby 為例` 這段感覺應該是全部類型介紹完在介紹
 
-##  07_client.md
-### Question
-1. `每種語言都有實作以太坊協定的相對應專案`, 每種語言是講每種用戶端嗎? 實作相對應專案是指?
-1. `Key匯入是?`
-1. 這裡的交易不是指發佈transation對吧?
-
-### Suggestion
-1. `還有提供互動的 commend cli` , 命令列介面（英語：command-line interface，縮寫：CLI）. 語意來說,可以寫提供互動的命令列介面(CLI)
-1. `curl -X POST --data`這段之前要有小標 或是描述說要示範得什麼
-1. 同理, go-ethereum上面要有個小標是以下介紹常見的ethereum client...
-1. 我覺得這個小結比較像放在一開始的目的。例如：倘若你想開發一個錢包功能的Dapp, 最簡單的方式就是直接使用現有的Wallet函式庫來開發。然而,若你想加入一些特殊的功能，例如XXXX，那麼wallet函式庫就無法滿足你，就要考慮直接跟Geth, Parity這些常見的ethereum client整合。   感覺這段可以放在 `希望透過這篇文章，`之前
-1. `unlockaccount `是誰提供的功能?
-
-##  08_gas.md
-### Question
-1. Gwei的單位 可以補充是 1 Ether = 1,000,000,000 Gwei (109) ，我發現後面有寫
-
-
-### Suggestion
-1. 這一張的主題是講gas,可以把中文寫出來
-1. Gas limit描述有點少
-1. `以下面的圖為例`沒有看到圖 `以上面的圖為例`沒看到圖
-1. `預估交易費 = Gas Limit * Gas Price`為什麼要用星號呢?
-1. `查詢gas狀態`可以有個描述這小結要說什麼，例如有提供什麼大家可能想知道的資訊 可以這邊查，例如基本費哪裡查(這個基本費是會變動的嗎?) 做什麼樣的功能，執行什麼樣的動作大概需花費多少
-1. 小結。其實我覺得看到這個人 可能不會感覺到 自己瀏覽網站or使用dapp要付錢。因為執行動作的人要付錢這件事跟自己上網的行為雷同這件事並沒有很明顯地讓人知道。
-
-##  09_remix_basic.md
-### Question
-1. 我的安裝reminx default contract是ballot
-### Suggestion
-
-##  11_solidity_intro.md
-### Question
-1. `view returns (uint)` view也是保留字嗎?
-### Suggestion
-1. Solidity 是一種合約是(X)式(O)導向程式語言
-1. 建構子帶參數範例錯誤，跟建構子帶參數長得一樣
+https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/
