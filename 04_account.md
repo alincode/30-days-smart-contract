@@ -64,7 +64,7 @@
 
 每個外部帳戶 (EOA) 都有一組公鑰和私鑰，發起交易時發起人要使用私鑰簽名，證明這筆交易的確是由本人發出，然後礦工在用公鑰檢查簽名，確認這筆交易的真假，然後在再把資料寫入區塊中，這個包含新交易資料的區塊會慢慢被同步至網路中的每個節點。
 
-![](assets/05_flow.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/04_flow.png)
 
 #### 公鑰、私鑰、位址的產生過程
 
