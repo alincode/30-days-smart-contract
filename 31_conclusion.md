@@ -18,6 +18,7 @@
 * 電子錢包介紹
 * Solidity 安全與防護
 * ERC 代幣系列
+* 開發與撰寫可重複使用 / 模組化智能合約
 * etc...
 
 除此之外，你也可以從區塊鏈工作職缺資訊找方向。
@@ -47,7 +48,7 @@
   * [Day12: 合約的結構](https://ithelp.ithome.com.tw/articles/10203280)
   * [Day13: Solidity 型別](https://ithelp.ithome.com.tw/articles/10203495)
   * [Day14: 表達示與流程控制](https://ithelp.ithome.com.tw/articles/10203645)
-  * [Day15: 修飾標記 view、pure、fallback 及重載函式](https://ithelp.ithome.com.tw/articles/10204079)
+  * [Day15: 函式與修飾標記](https://ithelp.ithome.com.tw/articles/10204079)
   * [Day16: mapping 型別](https://ithelp.ithome.com.tw/articles/10204297)
   * [Day17: 可見度和自動生成 getter 函式](https://ithelp.ithome.com.tw/articles/10204818)
   * [Day18: 單位和全域變數](https://ithelp.ithome.com.tw/articles/10205053)
@@ -63,5 +64,38 @@
   * [Day27: Oraclize 可靠證明](https://ithelp.ithome.com.tw/articles/10207705)
   * [Day28: Oraclize 的 computation 資料來源](https://ithelp.ithome.com.tw/articles/10207843)
 * 補充
-  * [Day29: 補充篇](https://ithelp.ithome.com.tw/articles/10208254)
-  * [Day30: 總結](https://ithelp.ithome.com.tw/articles/10208317)
+  * [Day29: Solidity 代碼檢查工具 - Solium](https://ithelp.ithome.com.tw/articles/10208254)
+  * [Day30: 附錄](https://ithelp.ithome.com.tw/articles/10208317)
+  * [Day31: 總結](https://ithelp.ithome.com.tw/articles/10210230)
+
+### 術語中英對照
+
+| 英文                  | 中文    |
+|---------------------|-------|
+| account             | 帳戶    |
+| account private key | 私鑰    |
+| account public key  | 公鑰    |
+| address             | 位址    |
+| block               | 區塊    |
+| blockchain          | 區塊鏈   |
+| compile             | 編譯    |
+| distributed ledger  | 分散式賬本 |
+| ether               | 以太幣   |
+| event               | 事件    |
+| enum                | 列舉    |
+| ethereum            | 以太坊   |
+| function            | 函示    |
+| faucet              | 水管    |
+| interface           | 介面    |
+| mnemonic code       | 助記碼   |
+| mainnet             | 主網路   |
+| public ledger       | 公開帳本  |
+| proof               | 證明    |
+| overloading         | 重載函式  |
+| transaction         | 交易    |
+| genesis block       | 創世區塊  |
+| smart contract      | 智能合約  |
+| state variable      | 狀態變數  |
+| struct              | 結構    |
+| visibility          | 可見度   |
+| library             | 函式庫   |

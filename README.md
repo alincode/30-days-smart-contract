@@ -19,7 +19,7 @@
   * [Day12: 合約的結構](https://ithelp.ithome.com.tw/articles/10203280)
   * [Day13: Solidity 型別](https://ithelp.ithome.com.tw/articles/10203495)
   * [Day14: 表達示與流程控制](https://ithelp.ithome.com.tw/articles/10203645)
-  * [Day15: 修飾標記 view、pure、fallback 及重載函式](https://ithelp.ithome.com.tw/articles/10204079)
+  * [Day15: 函式與修飾標記](https://ithelp.ithome.com.tw/articles/10204079)
   * [Day16: mapping 型別](https://ithelp.ithome.com.tw/articles/10204297)
   * [Day17: 可見度和自動生成 getter 函式](https://ithelp.ithome.com.tw/articles/10204818)
   * [Day18: 單位和全域變數](https://ithelp.ithome.com.tw/articles/10205053)
@@ -33,8 +33,9 @@
   * [Day26: Oraclize request](https://ithelp.ithome.com.tw/articles/10207495)
   * [Day27: Oraclize 可靠證明](https://ithelp.ithome.com.tw/articles/10207705)
   * [Day28: Oraclize 的 computation 資料來源](https://ithelp.ithome.com.tw/articles/10207843)
-  * [Day29: 補充篇](https://ithelp.ithome.com.tw/articles/10208254)
-  * [Day30: 總結](https://ithelp.ithome.com.tw/articles/10208317)
+  * [Day29: Solidity 代碼檢查工具 - Solium](https://ithelp.ithome.com.tw/articles/10208254)
+  * [Day30: 附錄](https://ithelp.ithome.com.tw/articles/10208317)
+  * [Day31: 總結](https://ithelp.ithome.com.tw/articles/10210230)
 
 # Discussion
 
