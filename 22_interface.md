@@ -13,8 +13,9 @@
 ```js
 pragma solidity ^0.4.11;
 
-interface Token {
-    function transfer(address recipient, uint amount) public;
+interface AbstractZombie {
+  function feedOn(address target) public onlyOwner;
+  function getLevel() public view returns(uint level) onlyOwner;
 }
 ```
 

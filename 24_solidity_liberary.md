@@ -3,8 +3,10 @@
 `library` 語法的使用方式類似 `contract` 語法，沒有自己的合約帳戶，所以在 library 不能使用 `payable`，也沒有 `fallback` 函式。
 
 函式庫不需要實例化，所以你可以從下面的例子看到，我們是直接用 `Utils.myAddress()` 語法來呼叫函式庫的函式。
+
 <!-- 函式庫的呼叫透過 DELEGATECALL 實現，即不切換上下文。 -->
 
+範例
 ```js
 pragma solidity ^0.4.25;
 
@@ -33,8 +35,42 @@ using lib for type;
 
 將 A 函式庫內定義的所有函式附著到 B 類型上，函式庫 A 中的函式，第一個參數會預設是 B 實例。
 
-* 原始碼來源：<https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/math/SafeMath.sol>
-* [SafeMath 文件](https://openzeppelin.org/api/docs/math_SafeMath.html)
+
+```js
+pragma solidity ^0.4.25;
+
+library MyLibrary {
+  function add(int1 num, int num2) view returns(int result) {
+    return num1 + num2;
+  }
+}
+
+contract Number {
+  int num;
+
+  using MyLibrary for int;
+
+  function addTwo() public {
+    num = num.add(42);
+  }
+}
+```
+
+如果沒用 Using For 語法的話，就要改用下面範例的寫法。
+
+```js
+contract Number {
+  int num;
+
+  using MyLibrary for int;
+
+  function addTwo() public {
+    num = MyLibrary.add(40, 2);
+  }
+}
+```
+
+#### SafeMath.sol
 
 ```js
 pragma solidity ^0.4.25;
@@ -109,3 +145,6 @@ library SafeMath {
   }
 }
 ```
+
+* 文件：<https://openzeppelin.org/api/docs/math_SafeMath.html>
+* 原始碼來源：<https://github.com/OpenZeppelin/openzeppelin-solidity>
