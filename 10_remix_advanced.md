@@ -1,6 +1,6 @@
 # 線上版 IDE 之 Remix 進階篇
 
-進階的部分涵蓋測試與除錯，兩大範疇。
+Remix 進階篇涵蓋測試與除錯，兩大範疇。
 
 ### 測試 (Testing)
 
@@ -30,7 +30,7 @@ Testing 頁籤有兩個明顯的按鈕
 
 核選方塊 (checkbox) 則是讓你可以勾選，只執行哪些測試程式。
 
-![](assets/10_testing.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/testing.png)
 
 #### 測試檔案範例
 
@@ -79,7 +79,7 @@ contract test_2 {
 
 當你按下 `Run Test` 按鈕後，就可以看到按鈕下方多了一個區塊，這個區塊就是用來呈現測試結果。
 
-![](assets/10_testing_result.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/testing_result.png)
 
 #### 在 Remix 上撰寫測試程式
 
@@ -119,7 +119,7 @@ contract SafeMathTest {
 
 **在 Remix 上真實執行的畫面**
 
-![](assets/10_first_test.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/first_test.png)
 
 ### 除錯 (Debugger)
 
@@ -127,21 +127,21 @@ contract SafeMathTest {
 
 從下面這張圖很明顯地看到兩個輸入框跟兩個按鈕，第一個輸入框可以填入區塊編號 (Block number)，第二個輸入框可以填入交易 hash，至於按鈕就不多做解釋了，就如字面上的一樣。
 
-![](assets/10_debugger_tab.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/debugger_tab.png)
 
 這時候你可能會想到，debug 會需要交易 hash 值 (transaction hash)，那我到底要怎麼知道這個值呢？請先把你的視線轉到 Remix 下方的主控台 (terminal) 區塊，每當你發佈合約或呼叫函式時，這裡都會出現一些新的 log。
 
-![](assets/10_terminal_log.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/terminal_log.png)
 
 試著把 log 展開可以看到更詳細的內容，看到了嗎？`transaction hash` 就在這裡。
 
 另一個更簡便的方法，按一下 `Debug` 按鈕，它可以自動帶入 transaction hash 並立即執行 debugging 模式。
 
-![](assets/10_terminal_log_detail.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/terminal_log_detail.png)
 
 #### debugger 模式
 
-![](assets/10_debuggering.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/debuggering.png)
 
 ### 安裝本機版 Remix
 
@@ -152,7 +152,7 @@ npm install remix-ide -g
 remix-ide
 ```
 
-![](assets/10_remix_start.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/10/remix_start.png)
 
 然後開啟 `http://localhost:8080/`
 

@@ -6,50 +6,17 @@
 
 Solidity 是靜態型語言，編譯後可以在 `EVM` 上執行。撰寫以太坊的智能合約，除了可以用 Solidity 語言，還有 [Vyper](https://github.com/ethereum/vyper) 語言可以選擇。
 
-![](assets/11_contributors.png)
-
-Solidity 語言處於持續開發階段，變動非常的頻繁，需要注意各個版本不同的語法差異。以下所有範例的語法都相容 `0.4.25` 版本。
-
 > `EVM` (Ethereum Virtual Machine)：中文翻譯為「以太坊虛擬機」，是智能合約的運行環境。
 
-#### 語法變動
+Solidity 語言仍處於持續開發階段，變動非常的頻繁，需要注意各個版本不同的語法差異。目前 `0.5.0` 版已發佈，但是目前網路上的資料大部分還是 `0.4.x` 版的，所以我們使用的使用範例的語法，還是採取與`0.4.25` 版本相容為主。
 
-新舊版之間比較明顯的語法變動，如下：
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/11_contributors.png)
 
-* 從 0.4.21 版開始，呼叫 `event` 要加 `emit`。
-* 從 0.4.22 版開始，建構子宣告方式改用 `constructor`，避免跟合約名稱有相依關係。
+#### 最基本的完整智能合約
 
-**舊版**
-```js
-pragma solidity ^0.4.20;
+我們先從最基本的合約範例說起，合約程式碼的第一行一定是 `pragma` 開頭，它是用來告訴編譯器，如何編譯我們所撰寫的原始碼，`^0.4.0` 指的是最低可接受用 0.4.0 版來編譯。
 
-contract Example {
-  event Log(string message);
-
-  function Example() public {
-    Log("Hello");
-  }
-}
-```
-
-**新版**
-```js
-pragma solidity ^0.4.25;
-
-contract Example {
-  event Log(string message);
-
-  constructor() public {
-    emit Log("Hello");
-  }
-}
-```
-
-#### 一個最基本的智能合約
-
-我們先從最基本的合約範例說起，合約程式碼的第一行一定是 `pragma` 開頭，它是用來告訴編譯器，如何編譯我們所撰寫的原始碼，`^0.4.0` 指的是，最低可接受用 0.4.0 版的 Solidity 來編譯。
-
-`contract` 是保留字，用法類似於其他程式語言的 `class`。除了 `contract` 之外，還有 `view`、`payable`、`constant`、`pure` 等都是保留字，會在接下來的篇幅逐步介紹它們的用途。
+`contract` 是保留字，用法類似於其他程式語言的 `class`。除此之外，還有 `view`、`payable`、`constant`、`pure` 等都是保留字，將在接下來的篇幅逐一介紹它們的用途。
 
 ```js
 pragma solidity ^0.4.0;
@@ -81,7 +48,7 @@ contract Example {
 }
 ```
 
-**建構子無參數**
+**建構子沒有帶參數**
 
 ```js
 pragma solidity ^0.4.25;
@@ -104,7 +71,19 @@ contract Example {
 }
 ```
 
+#### 合約的更多應用範例
+
+```js
+// 建立合約實例
+Example example = new Example("alincode");
+// 將合約實例轉換成位址
+address(this);
+// 毀掉合約，並把合約裡面的所有錢轉給指定的人。
+selfdestruct(ownerAddress);
+```
+
 #### 參考來源
 
 * Solidity - 維基百科：<https://zh.wikipedia.org/wiki/Solidity>
 * Solidity 0.4.25 官方文件：<http://solidity.readthedocs.io/en/v0.4.25/>
+* Solidity 語法速查表 by TOPMONKS：<https://topmonks.github.io/solidity_quick_ref/>

@@ -1,5 +1,7 @@
 # 單位和全域變數
 
+<!-- Literals and globals -->
+
 <!-- <https://solidity.readthedocs.io/en/v0.4.25/units-and-global-variables.html> -->
 
 ### 貨幣單位 (Ether Units)
@@ -39,27 +41,41 @@ function f(uint start, uint daysAfter) public {
 
 一些特別的變數和函式，提供有關區塊鏈的資訊和常用工具函式，存取範圍是全域的。
 
-#### 區塊和 Transaction 屬性
+#### 區塊 (block)
 
+* block.gaslimit (uint): 目前區塊的 gas limit
+* block.number (uint): 目前區塊的編號
 * block.blockhash(uint blockNumber)：區塊的 hash 值，只能用在最近的 256 各區塊，0.4.22 版之後被 `blockhash(uint blockNumber)` 取代。
 * block.coinbase (address): 目前的區塊礦工的位址
 * block.difficulty (uint): 目前的區塊難度
-* block.gaslimit (uint): 目前區塊的 gas limit
-* block.number (uint): 目前區塊的編號
 * block.timestamp (uint): 目前區塊的時間戳
-* gasleft() returns (uint256): 剩餘 gas
-* msg.data (bytes): 完整的 calldata
+
+#### msg
+
 * msg.gas (uint): 剩餘的 gas，0.4.21 版後被廢棄，由 `gasleft()` 取代。
 * msg.sender (address): 發送訊息給函式的位址
+* msg.data (bytes): 完整的 calldata
 * msg.sig (bytes4): calldata 的前四個 bytes (例如 function identifier)
 * msg.value (uint): 發送多少以太幣(單位是 wei)
-* now (uint): `block.timestamp` 的暱稱
-* tx.gasprice (uint): transaction 的 gas price
-* tx.origin (address): transaction 的發送者
-  
-<!-- * tx.origin (address): sender of the transaction (full call chain) -->
 
-<!-- > The values of all members of msg, including msg.sender and msg.value can change for every external function call. This includes calls to library functions. -->
+#### transaction
+
+* tx.gasprice (uint): 交易的 gas price
+* tx.origin (address): 交易的發送者
+  
+#### 其他
+
+* this: 目前的合約
+* now: 目前時間，是 `block.timestamp` 的暱稱。
+* gasleft() returns (uint256): 剩餘 gas
+* keccak256([argument, ...]);
+* sha256([argument, ...]); 
+* ripemd160([argument, ...]); 
+
+
+<!-- > 
+The values of all members of msg, including msg.sender and msg.value can change for every external function call. This includes calls to library functions.
+-->
 
 > 不要倚賴 `block.timestamp`、`now` 或 `blockhash` 當作隨機亂數的來源，除非你知道你在做什麼。區塊的時間戳和 hash 都某種程度受到礦工的影響，如果你拿這兩個值作為博弈應用，可能會被社群中居心不良的礦工破解。
 
@@ -67,10 +83,12 @@ function f(uint start, uint daysAfter) public {
 
 <!-- > The block hashes are not available for all blocks for scalability reasons. You can only access the hashes of the most recent 256 blocks, all other values will be zero. -->
 
-#### ABI Encoding Functions
+#### ABI 編譯函式
 
 * abi.encode(...) returns (bytes): ABI-encodes the given arguments
 * abi.encodePacked(...) returns (bytes): Performes packed encoding of the given arguments
+
+<!-- 
 * abi.encodeWithSelector(bytes4 selector, ...) returns (bytes): ABI-encodes the given arguments
 * starting from the second and prepends the given four-byte selector
 * abi.encodeWithSignature(string signature, ...) returns (bytes): Equivalent to abi.encodeWithSelector(bytes4(keccak256(signature), ...)
@@ -78,6 +96,7 @@ function f(uint start, uint daysAfter) public {
 > These encoding functions can be used to craft data for function calls without actually calling a function. Furthermore, keccak256(abi.encodePacked(a, b)) is a more explicit way to compute keccak256(a, b), which will be deprecated in future versions.
 
 See the documentation about the ABI and the tightly packed encoding for details about the encoding.
+-->
 
 #### 錯誤處理 (Error Handling)
 

@@ -1,6 +1,6 @@
-# 可見度 (Visibility) 和自動生成 getter 函式
+# 可見度和自動生成 getter 函式
 
-Solidity 有兩種呼叫函式的方式，一是呼叫內部函式，二是呼叫外部函式。函式和狀態變數則有四種可見度。
+Solidity 有兩種呼叫函式的方式，一是呼叫內部函式，二是呼叫外部函式。函式和狀態變數則有四種可見度(Visibility)。
 
 <!-- what meaning "do not create an actual EVM call?" -->
 

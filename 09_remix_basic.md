@@ -6,20 +6,21 @@
 * [Etheratom](https://atom.io/packages/etheratom)：ATOM 的 Solidity Plugin
 * Remix
     * 線上 IDE：<http://remix.ethereum.org>
+    * 線上 IDE alpha 版本：<https://remix-alpha.ethereum.org>
     * Github：<https://github.com/ethereum/remix-ide>
     * 文件：<https://remix.readthedocs.io/en/latest/>
 
-#### 區塊說明
+**區塊說明**
 
-![](assets/09_remix.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/remix.png)
 
-* 左側：檔案總管
+* 左側：檔案總管 (File Explorer)
     * 新增檔案
     * 開啟檔案
     * 發佈程式碼至 Github gist
     * 更新至 Github gist
     * 刪除檔案
-* 中間：編輯區
+* 中間：編輯區 (Editor)
 * 右側：諸多功能之頁籤
     * 編譯 (Compile)
     * 執行 (Run)
@@ -28,11 +29,11 @@
     * 除錯 (Debugger)
     * 設定 (Setting)
     * 支援 (Support)
-* 下方：主控台
+* 下方：主控台 (Terminal)
 
 ### 編譯頁籤 (Compile)
 
-![](assets/09_remix_compile_tab.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/remix_compile_tab.png)
 
 1. 選擇編譯的版本
 2. 自動編譯 (Auto compile)：如果你把這個選項打勾，每當程式碼有修改或其他條件會需要重新編譯的情況時，就會觸發自動編譯功能。建議使用本機版 Remix 時才勾起這個選項。
@@ -56,7 +57,7 @@
 7. At Address 按鈕：載入已發布的合約。若是想載入之前已經發佈過的智能合約，透過 `Remix` 介面來跟智能合約做互動，則可以把合約位址複製到 `Load contract from Address` 欄位中，然後按下 `At Address` 藍色按鈕。結果會出現在 `Deployed Contracts` 區塊中。
 8. Deployed Contracts
 
-![](assets/09_remix_run_tab.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/remix_run_tab.png)
 
 #### Environment
 
@@ -64,11 +65,11 @@
 * `Injected Web3` 環境：與 MetaMask 連接或類似 MetaMask 的服務
 * `Web3 Provider` 環境：指定要連結的節點位址，例如：本機的私網路 `http://localhost:8545`。
 
-![](assets/09_environment.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/environment.png)
 
 選擇 Web3 Provider 環境會跳出彈跳視窗，這裡可以指定 RPC 伺服器的位置。如下圖所示：
 
-![](assets/09_web3_provider.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/web3_provider.png)
 
 #### Deploy (發佈合約)
 
@@ -97,11 +98,11 @@ contract SimpleStorage {
 
 發佈前
 
-![](assets/09_deployed_contracts1.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/deployed_contracts1.png)
 
 成功發佈後
 
-![](assets/09_deployed_contracts2.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/deployed_contracts2.png)
 
 這時候你可以使用它來呼叫智能合約的函式了。
 
@@ -109,11 +110,25 @@ contract SimpleStorage {
 
 記得如果要傳入字串，需要使用雙引號包起來，例如 `"HelloWorld"` 。不過這裡的範例允許傳入的是數字，就不用特別用雙引號包起來了。
 
-![](assets/09_set.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/set.png)
 
 **呼叫 `get` 函式**
 
-![](assets/09_get.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/get.png)
+
+## 主控台
+
+用指令載入合約
+
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/09/loadurl.png)
+
+使用範例
+
+```
+remix.loadgist('1b87ded5087790b67b5c4cd90a68065f')
+
+remix.loadurl("https://github.com/alincode/30-days-smart-contract/src/01.sol")
+```
 
 #### 參考資料
 

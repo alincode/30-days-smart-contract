@@ -1,4 +1,25 @@
-# 修飾標記 view、pure、fallback 及重載函式
+# 函式 (function)
+
+函式是一個最小可被呼叫的元素
+
+語法
+```
+function name([argument, ...]) [visibility] [view|pure] 
+    [payable] [modifier, ...] [returns([argument, ...])]; 
+```
+
+可見度 (visibility) 有四種 public, private, internal, external，細節會在可見度的篇幅做進一步解釋。
+
+範例
+```js
+function setName(string name) public { ... };
+function getName() view public returns(string name) { ... };
+function compute() private returns(int num1, int num2) { ... };
+```
+
+<!-- 修飾標記 view、pure、fallback 及重載函式 -->
+
+## 函式的修飾標記
 
 ### view
 
@@ -49,7 +70,17 @@ contract C {
 }
 ```
 
-### fallback
+### payable
+
+讓函式可以接收以太幣
+
+```js
+function fund(string _name) public payable {
+    // ...
+}
+```
+
+## fallback
 
 合約可以有唯一個沒有函式名稱的函式，此函式不沒有參數，也不能返回值。如果在呼叫合約時，呼叫的函式名稱沒有比對到任何具名函式，這個函式就會被觸發。
 
@@ -71,7 +102,7 @@ contract C {
 > 雖然 `fallback` 函式規定不能有參數，但是你還是可以透過 `msg.data` 來取得資料。
 > 如果你沒有宣告 `fallback` 函式，當有 `EOA` 帳戶轉錢給智能合約地址時，會直接直接拋出異常，並退回 Ether。
 
-#### 情境一
+**情境一**
 
 這個合約會自動收下所有 Ether 不會返回
 
@@ -81,7 +112,7 @@ contract Sink {
 }
 ```
 
-#### 情境二
+**情境二**
 
 因為 `Test` 合約的 `fallback` 函式沒有標記 `payable`，所以合約會直接拋出異常，並退回 Ether。
 
@@ -100,11 +131,11 @@ contract Caller {
 }
 ```
 
-#### 情境三
+**情境三**
 
 這個情境編譯會失敗，即使 `Caller` 合約送 Ether 到 `Test` 合約，因為 `Test` 合約沒有 `payable`，所以交易會失敗。
 
-![](assets/15_payable_error.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/15_payable_error.png)
 
 ```js
 pragma solidity ^0.4.0;
@@ -121,11 +152,11 @@ contract Caller {
 }
 ```
 
-### 重載函式 (overloading)
+## 重載函式 (overloading)
 
 只要參數數量不同，合約可以有多個同名函式。
 
-#### 情境一
+**情境一**
 
 ```js
 pragma solidity ^0.4.16;
@@ -141,11 +172,11 @@ contract A {
 }
 ```
 
-#### 情境二
+**情境二**
 
 下面的範例，即使參數的型別不同，但參數的數量相同，還是無法編譯。
 
-![](assets/15_type_error.png)
+![](https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/assets/15_type_error.png)
 
 ```js
 pragma solidity ^0.4.16;

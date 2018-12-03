@@ -1,4 +1,6 @@
-# 表達示與流程控制 (Expressions and Control Structures)
+# 表達示與流程控制
+
+ <!-- Expressions and Control Structures -->
 
 ### 輸入參數和輸出參數
 
@@ -50,7 +52,7 @@ contract Simple {
 
 ### 流程控制
 
-除了 `switch` 和 `goto` 之外，其他在 `Javascript` 可用的流程控制在 `Solidity` 都可以使用。
+除了 `switch` 和 `goto` 之外，其他在 `Javascript` 語言可以用的流程控制，在 `Solidity` 都可以使用。
 
 **if**
 
@@ -84,6 +86,8 @@ while (i < 10) {
 
 **不允許的用法**
 
+這個在 Javascript 語言常使用的手法，在 Solidity 是不適用的。
+
 ```js
 if (1) { 
   // ... 
@@ -92,7 +96,11 @@ if (1) {
 
 ### 函式呼叫 (Function Calls)
 
+// TODO 添加一些解釋
+
 **呼叫內部函式 (Internal Function Calls)**
+
+呼叫同一個合約裡的函式
 
 ```js
 contract Math {
@@ -103,6 +111,8 @@ contract Math {
 
 **呼叫外部函式 (External Function Calls)**
 
+呼叫另一個合約的函式
+
 ```js
 pragma solidity ^0.4.0;
 
@@ -112,6 +122,7 @@ contract InfoFeed {
 contract Consumer {
   InfoFeed feed;
   function setFeed(address addr) { feed = InfoFeed(addr); }
+
   // 在呼叫外部函式時，可以指定發送的貨幣數量跟 gas
   function callFeed() { feed.info.value(10).gas(800)(); }
 }
@@ -142,8 +153,14 @@ contract Example {
 
 **require**
 
-發生例外會傳回剩餘未使用的 gas，回復所有狀態，常用於檢查前置條件。
+使用針對外部傳入值驗證，可針對條件判斷，當發生 false 時，會傳回剩餘未使用的 gas，回復所有狀態，情境常用於前置條件檢查。
 
+語法
+```
+require(condition,[message])
+```
+
+範例
 ```js
 contract Example {
   function superPower() { 
@@ -157,12 +174,38 @@ contract Example {
 
 終止執行，消耗所有 gas，回復所有狀態。
 
+```
+revert();
+revert("Something bad happened");
+```
+
+完整範例
+
+```js
+contract Example {
+  function superPower() { 
+    if(msg.sender != owner) {
+      revert();
+    }
+  }
+}
+```
+
 **assert**
 
-發生例外會傳回剩餘未使用的 gas，回復所有狀態，常用於驗證輸入值的邊界條件檢查。
+使用於內部狀態檢查，發生例外會傳回剩餘未使用的 gas，回復所有狀態，常用於驗證輸入值的邊界條件檢查。
 
 **throw**
 
 發生異常錯誤會消耗所有 gas，沒有例外資訊，會回復所有狀態。
 
 > 從 0.4.13 開始 `throw` 已被棄用，未來將會被移除，可改用 `revert`。
+
+#### 使用情境判斷
+
+`require()` 應該是你去檢查條件的函式，`assert()` 只用在防止永遠不應該發生的情境。至於 `require()` 與 `revert()` 使用的差別，只在於你需不需要條件是判斷。
+
+
+### 參考資料
+
+* [Solidity Learning: Revert(), Assert(), and Require() in Solidity, and the New REVERT Opcode in the…](https://medium.com/blockchannel/the-use-of-revert-assert-and-require-in-solidity-and-the-new-revert-opcode-in-the-evm-1a3a7990e06e)
