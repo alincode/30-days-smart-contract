@@ -40,18 +40,18 @@ using lib for type;
 pragma solidity ^0.4.25;
 
 library MyLibrary {
-  function add(int1 num, int num2) view returns(int result) {
+  function add(int num1, int num2) view returns(int result) {
     return num1 + num2;
   }
 }
 
 contract Number {
-  int num;
+  int num = 2;
 
   using MyLibrary for int;
 
   function addTwo() public {
-    num = num.add(42);
+    num = num.add(40);
   }
 }
 ```
