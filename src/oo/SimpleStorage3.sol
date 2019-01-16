@@ -1,8 +1,6 @@
 pragma solidity >=0.4.0 <0.6.0;
 
-import "./SimpleStorage3.sol";
-
-contract SimpleStorage2 {
+contract SimpleStorage3 {
     uint storedData;
 
     function set(uint x) public {
