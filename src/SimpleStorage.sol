@@ -1,5 +1,5 @@
 pragma solidity >=0.4.0 <0.6.0;
-import "./oo/SimpleStorage2";
+import "./oo/SimpleStorage2.sol";
 
 contract SimpleStorage {
     uint storedData;
